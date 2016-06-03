@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.theme')
+  angular.module('PCAdmin.theme')
       .factory('baPanel', baPanel);
 
   /** @ngInject */

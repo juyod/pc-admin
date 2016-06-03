@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.dashboard')
+  angular.module('PCAdmin.pages.dashboard')
       .controller('DashboardTodoCtrl', DashboardTodoCtrl);
 
   /** @ngInject */

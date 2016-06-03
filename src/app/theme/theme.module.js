@@ -5,13 +5,13 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.theme', [
+  angular.module('PCAdmin.theme', [
       'toastr',
       'chart.js',
       'angular-chartist',
       'angular.morris-chart',
       'textAngular',
-      'BlurAdmin.theme.components'
+      'PCAdmin.theme.components'
   ]);
 
 })();

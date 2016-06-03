@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('BlurAdmin', [
+angular.module('PCAdmin', [
   'ngAnimate',
   'ui.bootstrap',
   'ui.sortable',
@@ -12,7 +12,6 @@ angular.module('BlurAdmin', [
   'ui.slimscroll',
   'ngJsTree',
   'angular-progress-button-styles',
-
-  'BlurAdmin.theme',
-  'BlurAdmin.pages'
+  'PCAdmin.theme',
+  'PCAdmin.pages'
 ]);

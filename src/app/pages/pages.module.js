@@ -5,17 +5,17 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages', [
+  angular.module('PCAdmin.pages', [
     'ui.router',
 
-    'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
-    'BlurAdmin.pages.charts',
-    'BlurAdmin.pages.maps',
-    'BlurAdmin.pages.profile',
+    'PCAdmin.pages.dashboard',
+    'PCAdmin.pages.ui',
+    'PCAdmin.pages.components',
+    'PCAdmin.pages.form',
+    'PCAdmin.pages.tables',
+    'PCAdmin.pages.charts',
+    'PCAdmin.pages.maps',
+    'PCAdmin.pages.profile',
   ])
       .config(routeConfig);
 

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.ui.modals', [])
+  angular.module('PCAdmin.pages.ui.modals', [])
       .config(routeConfig);
 
   /** @ngInject */

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components.tree')
+  angular.module('PCAdmin.pages.components.tree')
     .controller('treeCtrl', treeCtrl);
 
   /** @ngInject */

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.ui.tabs', [])
+  angular.module('PCAdmin.pages.ui.tabs', [])
       .config(routeConfig);
 
   /** @ngInject */

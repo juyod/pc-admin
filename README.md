@@ -1,4 +1,4 @@
-# BlurAdmin Angular admin panel front-end framework
+# PCAdmin Angular admin panel front-end framework
 
 Customizable admin panel framework made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.charts.chartist')
+  angular.module('PCAdmin.pages.charts.chartist')
     .controller('chartistCtrl', chartistCtrl);
 
   /** @ngInject */
