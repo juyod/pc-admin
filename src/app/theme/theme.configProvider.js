@@ -2,32 +2,32 @@
  * Created by k.danovsky on 13.05.2016.
  */
 
-(function () {
+(function() {
   'use strict';
 
   var basic = {
     default: '#ffffff',
     defaultText: '#666666',
     border: '#dddddd',
-    borderDark: '#aaaaaa',
+    borderDark: '#aaaaaa'
   };
 
   // main functional color scheme
   var colorScheme = {
-    primary: '#209e91',
+    primary: '#d7b42f',
     info: '#2dacd1',
     success: '#90b900',
     warning: '#dfb81c',
-    danger: '#e85656',
+    danger: '#e85656'
   };
 
   // dashboard colors for charts
   var dashboardColors = {
-    blueStone: '#005562',
-    surfieGreen: '#0e8174',
-    silverTree: '#6eba8c',
-    gossip: '#b9f2a1',
-    white: '#10c4b5',
+    blueStone: '#dfb81c',
+    surfieGreen: '#FFC400',
+    silverTree: '#FFD740',
+    gossip: '#FFB300',
+    white: '#FFCA28'
   };
 
   angular.module('PCAdmin.theme')
@@ -74,14 +74,12 @@
     };
 
     conf.changeTheme = function(theme) {
-      angular.merge(conf.theme, theme)
+      angular.merge(conf.theme, theme);
     };
-
     conf.changeColors = function(colors) {
-      angular.merge(conf.colors, colors)
+      angular.merge(conf.colors, colors);
     };
-
-    conf.$get = function () {
+    conf.$get = function() {
       delete conf.$get;
       return conf;
     };

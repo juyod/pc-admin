@@ -2,14 +2,14 @@
  * @author v.lugovksy
  * created on 16.12.2015
  */
-(function () {
+(function() {
   'use strict';
 
   angular.module('PCAdmin.pages.dashboard')
-      .controller('DashboardPieChartCtrl', DashboardPieChartCtrl);
+    .controller('DashboardTopMsgCtrl', DashboardTopMsgCtrl);
 
   /** @ngInject */
-  function DashboardPieChartCtrl($scope, $timeout, baConfig, baUtil) {
+  function DashboardTopMsgCtrl($scope, $timeout, baConfig, baUtil, DashboardTopMsgService) {
     var pieColor = baUtil.hexToRGB(baConfig.colors.defaultText, 0.2);
     $scope.charts = [{
       color: pieColor,
@@ -31,19 +31,18 @@
       description: 'Returned',
       stats: '32,592',
       icon: 'refresh',
-    }
-    ];
+    }];
 
     function getRandomArbitrary(min, max) {
       return Math.random() * (max - min) + min;
     }
 
     function loadPieCharts() {
-      $('.chart').each(function () {
+      $('.chart').each(function() {
         var chart = $(this);
         chart.easyPieChart({
           easing: 'easeOutBounce',
-          onStep: function (from, to, percent) {
+          onStep: function(from, to, percent) {
             $(this.el).find('.percent').text(Math.round(percent));
           },
           barColor: chart.attr('rel'),
@@ -56,7 +55,7 @@
         });
       });
 
-      $('.refresh-data').on('click', function () {
+      $('.refresh-data').on('click', function() {
         updatePieCharts();
       });
     }
@@ -67,7 +66,7 @@
       });
     }
 
-    $timeout(function () {
+    $timeout(function() {
       loadPieCharts();
       updatePieCharts();
     }, 1000);

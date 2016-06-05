@@ -2,21 +2,21 @@
   background-color: $sidebar;
   position: fixed;
   z-index: 904;
-  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5);
   height: 66px;
   width: 100%;
   min-width: $resMin;
   padding: 0 32px 0 40px;
 
   &.scrolled {
-    background-color: rgba(black, 0.85)
+    background-color: rgba(black, 0.85);
   }
 }
 
 a.al-logo {
   color: $sidebar-text;
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   font-family: $font-family;
   white-space: nowrap;
   float: left;
@@ -37,7 +37,7 @@ a.al-logo {
 .al-user-profile {
   float: right;
   margin-right: 12px;
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   padding: 0;
   width: 36px;
   height: 36px;

@@ -1,11 +1,14 @@
 /** Different tabs positions, which were removed from bootstrap */
-.tabs-below, .tabs-right, .tabs-left {
+.tabs-below,
+.tabs-right,
+.tabs-left {
   .nav-tabs {
     border-bottom: 0;
   }
 }
 
-.tabs-right, .tabs-left {
+.tabs-right,
+.tabs-left {
   .nav-tabs {
     min-width: 100px;
   }
@@ -41,18 +44,23 @@
       margin-bottom: 0;
 
       > a {
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
         }
       }
     }
     > .active a {
-      &, &:hover, &:focus {
+      &,
+      &:hover,
+      &:focus {
+
       }
     }
   }
 }
 
-.tabs-left, .tabs-right {
+.tabs-left,
+.tabs-right {
   height: 100%;
   > .nav-tabs > li {
     float: none;
@@ -71,12 +79,15 @@
   > li > a {
     margin-right: -1px;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
     }
   }
 
   > .active a {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
     }
   }
 }
@@ -86,7 +97,8 @@
   border-top-left-radius: 0;
   border-bottom-right-radius: 5px;
   > li > a {
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
     }
   }
 
@@ -95,7 +107,9 @@
   }
 
   > .active a {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
     }
   }
 }
@@ -115,7 +129,7 @@
 }
 
 .tab-content {
-  padding: 15px 15px 5px 15px;
+  padding: 15px 15px 5px;
   background: transparent;
   color: $default-text;
   .tab-pane p {
@@ -178,15 +192,19 @@
   }
 }
 
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
   background-color: transparent;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
   border: none;
 }
 
-.accordion-panel  {
+.accordion-panel {
   .panel-heading {
     border-radius: 3px;
   }
@@ -197,7 +215,7 @@
   }
 
   &:not(.panel-open) .panel-heading {
-    transition-delay: .3s;
+    transition-delay: 0.3s;
   }
 
   > .panel-heading + .panel-collapse > .panel-body {
@@ -213,4 +231,3 @@
     padding: 14px 22px;
   }
 }
-
