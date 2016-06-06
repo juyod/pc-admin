@@ -9,18 +9,26 @@
     .factory('DashboardTopMsgService', DashboardTopMsgService);
 
   /** @ngInject */
-  function DashboardTopMsgService($http) {
+  function DashboardTopMsgService($http, $q) {
     var loadCurOnline = function() {
-      return $http.jsonp('', {});
+      var defer = $q.defer();
+      $http.jsonp('', {});
+      return defer.promise;
     };
     var loadHistoryOnline = function() {
-
+      var defer = $q.defer();
+      $http.jsonp('', {});
+      return defer.promise;
     };
     var loadPeopleFlow = function() {
-
+      var defer = $q.defer();
+      $http.jsonp('', {});
+      return defer.promise;
     };
     var loadLatestAnnouncement = function() {
-
+      var defer = $q.defer();
+      $http.jsonp('', {});
+      return defer.promise;
     };
     return {
       loadCurOnline: loadCurOnline,
