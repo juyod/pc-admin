@@ -8,7 +8,8 @@
   angular.module('PCAdmin.pages', [
       'ui.router',
       'PCAdmin.pages.dashboard',
-      'PCAdmin.pages.memberInfo'
+      'PCAdmin.pages.memberInfo',
+      'PCAdmin.pages.adManager'
     ])
     .config(routeConfig);
 
