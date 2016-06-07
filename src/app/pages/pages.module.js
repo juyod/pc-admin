@@ -9,7 +9,8 @@
       'ui.router',
       'PCAdmin.pages.dashboard',
       'PCAdmin.pages.memberInfo',
-      'PCAdmin.pages.adManager'
+      'PCAdmin.pages.adManager',
+      'PCAdmin.pages.adCalendar'
     ])
     .config(routeConfig);
 
