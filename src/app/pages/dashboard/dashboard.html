@@ -1,18 +1,24 @@
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-        特别关注
-    </div>
-</div>
-<dashboard-top-msg></dashboard-top-msg>
-<div class="row">
-    <div class="col-lg-9 col-md-9 col-sm-12">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12" ba-panel ba-panel-title="每日造访" ba-panel-class="medium-panel traffic-panel"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12" ba-panel ba-panel-title="及时通告" ba-panel-class="medium-panel traffic-panel"></div>
+<div class="dashboard">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="special-notice">
+                特别关注 &gt;&gt;
+            </div>
         </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-12" ba-panel ba-panel-title="广告商-点击人数" ba-panel-class="large-panel">
+    <dashboard-top-msg></dashboard-top-msg>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" ba-panel ba-panel-title="每日造访" ba-panel-class="medium-panel traffic-panel"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" ba-panel ba-panel-title="及时通告" ba-panel-class="medium-panel traffic-panel"></div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12" ba-panel ba-panel-title="广告商-访问人数" ba-panel-class="large-panel with-scroll">
+            <div class="subtitle">访问量如此之高，你还在等什么！</div>
+            <advertiser-visitors></advertiser-visitors>
+        </div>
     </div>
 </div>
