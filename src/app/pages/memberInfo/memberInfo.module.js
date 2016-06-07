@@ -13,6 +13,7 @@
       .state('memberInfo', {
         url: '/memberInfo',
         templateUrl: 'app/pages/memberInfo/memberInfo.html',
+        controller: 'memberInfoPageCtrl',
         title: '会员资料',
         sidebarMeta: {
           icon: 'fa fa-user',
