@@ -8,6 +8,7 @@
     'ngTouch',
     'toastr',
     'smart-table',
+    'validation',
     "xeditable",
     'ui.slimscroll',
     'ngJsTree',
