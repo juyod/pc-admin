@@ -7,7 +7,6 @@
 
   angular.module('PCAdmin.pages', [
     'ui.router',
-
     'PCAdmin.pages.dashboard',
     'PCAdmin.pages.ui',
     'PCAdmin.pages.components',

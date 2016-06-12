@@ -3,26 +3,28 @@
 @import "theme/_layout.scss";
 @import 'theme/buttons.scss';
 @import 'app/form.scss';
-
 html {
   min-height: 520px;
   height: 100%;
 }
 
 body {
-  // @include main-background();
+  background-color: #f6f6f6;
   height: 100%;
 }
 
 $text-color: #ffffff;
-
-.form-control, .form-control:focus {
+.form-control,
+.form-control:focus {
   @include placeholderStyle($text-color, 0.9);
   background-color: rgba(0, 0, 0, .4);
   border-radius: 5px;
   color: $text-color;
 }
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
   @include placeholderStyle($text-color, 0.6);
 }
 
@@ -57,12 +59,10 @@ $text-color: #ffffff;
       color: $primary-dark;
     }
   }
-
   .control-label {
     padding-top: 11px;
     color: $text-color;
   }
-
   .form-group {
     margin-bottom: 12px;
   }
@@ -116,34 +116,12 @@ a.forgot-pass {
       display: block;
     }
   }
-  &:before, &:after {
+  &:before,
+  &:after {
     border-top: solid 1px $text-color;
     content: "";
     height: 1px;
     width: 35%;
     display: table-cell;
   }
-}
-
-.al-share-auth {
-  text-align: center;
-  .al-share {
-    float: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    li {
-      margin-left: 24px;
-      &:first-child {
-        margin-left: 0;
-      }
-      i {
-        font-size: 24px;
-      }
-    }
-  }
-}
-
-.btn-auth {
-  color: #ffffff!important;
 }

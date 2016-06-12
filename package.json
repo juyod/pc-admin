@@ -1,6 +1,11 @@
 {
   "name": "blur_admin",
   "version": "1.2.0",
+  "scripts": {
+    "start": "gulp serve",
+    "build": "gulp build",
+    "clean": "gulp clean"
+  },
   "devDependencies": {
     "browser-sync": "~2.9.11",
     "browser-sync-spa": "~1.0.3",
@@ -43,7 +48,22 @@
     "wiredep": "~2.2.2",
     "wrench": "~1.5.8"
   },
-  "scripts": {
-    "postinstall": "bower install"
-  }
+  "description": "Customizable admin panel framework made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "node-sass": "^3.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juyod/pc-admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juyod/pc-admin/issues"
+  },
+  "homepage": "https://github.com/juyod/pc-admin#readme"
 }

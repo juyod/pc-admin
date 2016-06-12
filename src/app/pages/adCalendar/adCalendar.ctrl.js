@@ -21,17 +21,7 @@
       selectable: true,
       selectHelper: true,
       select: function(start, end) {
-        var title = prompt('Event Title:');
-        var eventData;
-        if (title) {
-          eventData = {
-            title: title,
-            start: start,
-            end: end
-          };
-          $element.fullCalendar('renderEvent', eventData, true); // stick? = true
-        }
-        $element.fullCalendar('unselect');
+    
       },
       editable: true,
       eventLimit: true, // allow "more" link when too many events

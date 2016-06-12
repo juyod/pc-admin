@@ -13,11 +13,10 @@
       .state('adCalendar', {
         url: '/adCalendar',
         templateUrl: 'app/pages/adCalendar/adCalendar.html',
-        controller: 'adCalendarCtrl',
         title: '广告行事历',
         sidebarMeta: {
-          icon: 'fa fa-user',
-          order: 3
+          icon: 'fa fa-calendar',
+          order: 4
         }
       });
   }
