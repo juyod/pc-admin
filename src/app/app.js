@@ -14,6 +14,7 @@
     'ngJsTree',
     'angular-progress-button-styles',
     'PCAdmin.theme',
-    'PCAdmin.pages'
+    'PCAdmin.pages',
+    'PCAdmin.base'
   ]);
 })();

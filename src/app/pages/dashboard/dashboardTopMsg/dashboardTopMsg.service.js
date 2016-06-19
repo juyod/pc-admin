@@ -1,6 +1,5 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author lgc 
  */
 (function() {
   'use strict';
@@ -9,30 +8,43 @@
     .factory('DashboardTopMsgService', DashboardTopMsgService);
 
   /** @ngInject */
-  function DashboardTopMsgService($http, $q) {
-    var loadCurOnline = function() {
+  function DashboardTopMsgService(fetchUtil, $q, noticeService) {
+    var getTotalOnline = function() {
       var defer = $q.defer();
-      $http.jsonp('', {});
+      fetchUtil.jsonp('pubwifi/getTotalOnline.do', {}).then(function(data) {
+        if (data.resultList && data.resultList.length > 0) {
+          defer.resolve(data.resultList[0].CNT_ONLINE);
+        }
+      }, function() {
+        defer.reject();
+      });
       return defer.promise;
     };
-    var loadHistoryOnline = function() {
-      var defer = $q.defer();
-      $http.jsonp('', {});
-      return defer.promise;
-    };
+
     var loadPeopleFlow = function() {
       var defer = $q.defer();
-      $http.jsonp('', {});
+      fetchUtil.jsonp('pubwifi/getPassengerFlow.do', {}).then(function(data) {
+        defer.resolve(data.PASSENGER_FLOW);
+      }, function() {
+        defer.reject();
+      });
       return defer.promise;
     };
     var loadLatestAnnouncement = function() {
       var defer = $q.defer();
-      $http.jsonp('', {});
+      noticeService.loadNoticeList().then(function(data) {
+        if (data.resultList && data.resultList.length > 0) {
+          defer.resolve(data.resultList[0].UN_VISIT_CNT);
+        } else {
+          defer.resolve(0);
+        }
+      }, function(data) {
+        defer.reject(data);
+      })
       return defer.promise;
     };
     return {
-      loadCurOnline: loadCurOnline,
-      loadHistoryOnline: loadHistoryOnline,
+      getTotalOnline: getTotalOnline,
       loadPeopleFlow: loadPeopleFlow,
       loadLatestAnnouncement: loadLatestAnnouncement
     };

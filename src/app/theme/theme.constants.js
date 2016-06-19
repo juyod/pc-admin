@@ -2,7 +2,7 @@
  * @author v.lugovsky
  * created on 15.12.2015
  */
-(function () {
+(function() {
   'use strict';
 
   var IMAGES_ROOT = 'assets/img/';
@@ -49,7 +49,7 @@
     }
 
     var result = "#";
-    for(var i = 1; i < 7; i += 2) {
+    for (var i = 1; i < 7; i += 2) {
       var color1Part = h2d(color1.substr(i, 2));
       var color2Part = h2d(color2.substr(i, 2));
       var resultPart = d2h(Math.floor(color2Part + (color1Part - color2Part) * (weight / 100.0)));

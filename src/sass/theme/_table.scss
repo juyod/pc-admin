@@ -258,6 +258,24 @@ input.search-input {
 .table > tbody > tr.primary > td {
   @include color-row($primary);
 }
+
+.table > tbody > tr.primary-light > td {
+  @include color-row($primary-light);
+}
+
+.table > tbody > tr.primary-light-second > td {
+  @include color-row($primary-light-second);
+}
+
+.table > tbody > tr.primary-light-third > td {
+  @include color-row($primary-light-third);
+}
+
+.table > tbody > tr.primary-light-forth > td {
+  @include color-row($primary-light-forth);
+}
+
+
 .table > tbody > tr.success > td {
   @include color-row($success);
 }

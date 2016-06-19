@@ -495,7 +495,7 @@ label.custom-input-danger {
   input {
     background-color: $input-background;
     border: 1px solid $input-border;
-    border-radius: 5px;
+    border-radius: 2px;
     @include placeholderStyle($default-text, 0.8);
     line-height: 22px;
     font-size: 11px;

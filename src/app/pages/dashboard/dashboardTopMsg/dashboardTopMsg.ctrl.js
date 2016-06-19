@@ -1,6 +1,5 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author lgc
  */
 (function() {
   'use strict';
@@ -10,15 +9,10 @@
 
   /** @ngInject */
   function DashboardTopMsgCtrl($scope, DashboardTopMsgService) {
-    DashboardTopMsgService.loadCurOnline().then(function(data) {
-      $scope.curOnline = data;
+    DashboardTopMsgService.getTotalOnline().then(function(data) {
+      $scope.totalOnline = data;
     }, function() {
-      $scope.curOnline = '暂无数据';
-    });
-    DashboardTopMsgService.loadHistoryOnline().then(function(data) {
-      $scope.historyOnline = data;
-    }, function() {
-      $scope.historyOnline = '暂无数据';
+      $scope.totalOnline = '暂无数据';
     });
     DashboardTopMsgService.loadPeopleFlow().then(function(data) {
       $scope.peopleFlow = data;
