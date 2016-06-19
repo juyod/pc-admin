@@ -9,32 +9,16 @@
     .factory('advertiserVisitorsService', advertiserVisitorsService);
 
   /** @ngInject */
-  function advertiserVisitorsService($http, $q) {
-    var loadCurOnline = function() {
+  function advertiserVisitorsService(fetchUtil, $q) {
+    var loadSceneVisit = function() {
       var defer = $q.defer();
-      $http.jsonp('', {});
-      return defer.promise;
-    };
-    var loadHistoryOnline = function() {
-      var defer = $q.defer();
-      $http.jsonp('', {});
-      return defer.promise;
-    };
-    var loadPeopleFlow = function() {
-      var defer = $q.defer();
-      $http.jsonp('', {});
-      return defer.promise;
-    };
-    var loadLatestAnnouncement = function() {
-      var defer = $q.defer();
-      $http.jsonp('', {});
+      fetchUtil.jsonp('adbms/AdvertStatis_getSceneVisitCntByAdvertiser.do').then(function(data) {
+        defer.resolve(data.resultList);
+      });
       return defer.promise;
     };
     return {
-      loadCurOnline: loadCurOnline,
-      loadHistoryOnline: loadHistoryOnline,
-      loadPeopleFlow: loadPeopleFlow,
-      loadLatestAnnouncement: loadLatestAnnouncement
+      loadSceneVisit: loadSceneVisit
     };
   }
 })();

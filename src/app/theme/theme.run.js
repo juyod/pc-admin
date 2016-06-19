@@ -2,7 +2,7 @@
  * @author v.lugovksy
  * created on 15.12.2015
  */
-(function () {
+(function() {
   'use strict';
 
   angular.module('PCAdmin.theme')
@@ -11,7 +11,7 @@
   /** @ngInject */
   function themeRun($timeout, $rootScope, layoutPaths, preloader, $q, baSidebarService, themeLayoutSettings) {
     var whatToWait = [
-      preloader.loadAmCharts(),
+      preloader.documentLoad(),
       $timeout(3000)
     ];
 
@@ -25,11 +25,11 @@
       }
     }
 
-    $q.all(whatToWait).then(function () {
+    $q.all(whatToWait).then(function() {
       $rootScope.$pageFinishedLoading = true;
     });
 
-    $timeout(function () {
+    $timeout(function() {
       if (!$rootScope.$pageFinishedLoading) {
         $rootScope.$pageFinishedLoading = true;
       }

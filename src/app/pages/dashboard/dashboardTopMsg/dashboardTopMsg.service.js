@@ -1,5 +1,5 @@
 /**
- * @author lgc 
+ * @author lgc
  */
 (function() {
   'use strict';

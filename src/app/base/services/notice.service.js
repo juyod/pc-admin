@@ -8,11 +8,17 @@
     .factory('noticeService', noticeService);
 
   /** @ngInject */
-  function noticeService(fetchUtil) {
+  function noticeService(fetchUtil, $q) {
 
     return {
       loadNoticeList: function() {
-        return fetchUtil.jsonp('notice/getNoticeInfoList.do');
+        var defer = $q.defer();
+        fetchUtil.jsonp('notice/getNoticeInfoList.do', {}).then(function(data) {
+          defer.resolve(data);
+        }, function(data) {
+          defer.reject(data);
+        });
+        return defer.promise;
       }
     }
   }

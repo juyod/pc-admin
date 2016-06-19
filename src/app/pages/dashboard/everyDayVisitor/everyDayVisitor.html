@@ -1,11 +1,25 @@
 <div>
     <form class="row form-inline">
-        <div class="form-group col-sm-4 col-xs-6">
-            <input type="text" class="form-control" id="exampleInputName2" placeholder="国籍">
+        <div class="form-group col-sm-offset-2 col-sm-3 col-xs-4">
+            <select class="form-control" name="araeSelect" id="araeSelect" placeholder="请选择区域" ng-model="params.sceneCode">
+                <option value="">请选择区域</option>
+                <option ng-repeat="option in data.areaList" value="{{option.SCENE_CODE}}">{{option.SCENE_NAME}}</option>
+            </select>
         </div>
-        <div class="form-group col-sm-4 col-xs-6">
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="日期">
+        <div class="form-group col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.queryDate" is-open="queryDateOpen" ng-required="true" close-text="Close" ng-disabled="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="queryDateOpen=!queryDateOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+            </p>
         </div>
-        <button type="submit" class="btn btn-primary"><span class="fa fa-search"></span></button>
+        <div class="form-group col-sm-3 col-xs-4">
+            <select class="form-control" name="araeSelect" placeholder="请选择广告" ng-model="params.advertCode">
+                <option value="">请选择广告</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="query()"><span class="fa fa-search"></span></button>
     </form>
+    <div class="everyDayChart" id="everDayChart"></div>
 </div>

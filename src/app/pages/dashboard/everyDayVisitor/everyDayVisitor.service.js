@@ -13,7 +13,13 @@
     var loadAdVisitCntGrowthRate = function(params) {
       var defer = $q.defer();
       fetchUtil.jsonp('adbms/AdvertStatis_adVisitCntGrowthRate.do', params).then(function(data) {
-        defer.resolve(data.resultList);
+        var results = [];
+        angular.forEach(data.resultList, function(v) {
+          results.push([
+            new Date(v.STATIS_TIME), v.CONN_SUB_CNT
+          ]);
+        });
+        defer.resolve(results);
       }, function() {
         defer.reject();
       });

@@ -8,12 +8,24 @@
     .factory('areaService', areaService);
 
   /** @ngInject */
-  function areaService(fetchUtil) {
-
+  function areaService(fetchUtil, $q) {
+    var areaList = null;
     return {
       loadAreaList: function() {
-        return fetchUtil.jsopn('pubwifi/getJoinedArea.do');
+
+        var defer = $q.defer();
+        if (!areaList) {
+          fetchUtil.jsonp('pubwifi/getJoinedArea.do').then(function(data) {
+            areaList = data.resultList;
+            defer.resolve(data.resultList);
+          }, function() {
+            defer.reject();
+          });
+        } else {
+          defer.resolve(areaList);
+        }
+        return defer.promise;
       }
-    }
+    };
   }
 })();

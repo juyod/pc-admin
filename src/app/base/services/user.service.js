@@ -10,11 +10,11 @@
   /** @ngInject */
   function userService() {
     var userInfo = {
-      id: '6',
+      id: '8',
       name: 'Johon Smisth',
       email: 'js@gmail.com',
       photo: 'assets/img/app/profile/Nasta.png',
-      type: 'joinUserId' //busiOwnerId   advertiserId
+      type: 'advertiserId' //busiOwnerId   advertiserId
     }
     return {
       loadUser: function() {

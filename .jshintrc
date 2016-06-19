@@ -91,6 +91,8 @@
         "exports": true,
         "require": true,
         "angular": true,
+        "AmCharts":true,
+        "echarts":true,
         "$":true
     } // additional predefined global variables
 }

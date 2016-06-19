@@ -2,7 +2,7 @@
  * @author a.demeshko
  * created on 3/1/16
  */
-(function () {
+(function() {
   'use strict';
 
   angular.module('PCAdmin.theme')
@@ -11,18 +11,18 @@
   /** @ngInject */
   function preloader($q) {
     return {
-      loadImg: function (src) {
+      loadImg: function(src) {
         var d = $q.defer();
         var img = new Image();
         img.src = src;
-        img.onload = function(){
+        img.onload = function() {
           d.resolve();
         };
         return d.promise;
       },
-      loadAmCharts : function(){
+      documentLoad: function() {
         var d = $q.defer();
-        AmCharts.ready(function(){
+        $(document).ready(function() {
           d.resolve();
         });
         return d.promise;

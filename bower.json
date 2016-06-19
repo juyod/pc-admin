@@ -15,11 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "Chart.js": "~1.0.2",
     "Ionicons": "ionicons#~2.0.1",
-    "amcharts": "~3.15.2",
-    "amcharts-stock": "*",
-    "ammap": "~3.14.5",
     "angular": "~1.4.8",
     "angular-route": "~1.4.6",
     "angular-slimscroll": "~1.1.5",
@@ -55,28 +51,10 @@
     "angular-xeditable": "~0.1.9",
     "ng-js-tree": "~0.0.7",
     "angular-validation": "1.4.1",
-    "angular-form-for": "^4.1.12"
+    "angular-form-for": "^4.1.12",
+    "echarts": "https://github.com/ecomfe/echarts.git"
   },
   "overrides": {
-    "amcharts": {
-      "main": [
-        "./dist/amcharts/amcharts.js",
-        "./dist/amcharts/plugins/responsive/responsive.min.js",
-        "./dist/amcharts/serial.js",
-        "./dist/amcharts/funnel.js",
-        "./dist/amcharts/pie.js",
-        "./dist/amcharts/gantt.js"
-      ]
-    },
-    "amcharts-stock": {
-      "main": "./dist/amcharts/amstock.js"
-    },
-    "ammap": {
-      "main": [
-        "./dist/ammap/ammap.js",
-        "./dist/ammap/maps/js/worldLow.js"
-      ]
-    },
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
@@ -99,6 +77,9 @@
         "fonts/fontawesome-webfont.woff",
         "fonts/fontawesome-webfont.woff2"
       ]
+    },
+    "echarts": {
+      "main": "dist/echarts.min.js"
     }
   }
 }

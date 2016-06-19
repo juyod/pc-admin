@@ -1,0 +1,7 @@
+<table class="table">
+    <tr ng-repeat="row in noticeList" ng-class="[classList[$index%4]]">
+        <td><span class="fa fa-bell"></span></td>
+        <td>{{row.SCENE_NAME}}</td>
+        <td>{{row.VISIT_CNT}}</td>
+    </tr>
+</table>
