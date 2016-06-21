@@ -31,6 +31,9 @@ $panel-heading-font-size: 16px;
   &.viewport100 {
     height: calc(100vh - 218px);
   }
+  &.calendar-panel {
+    height: 830px;
+  }
 
   &.with-scroll {
     .panel-body {
