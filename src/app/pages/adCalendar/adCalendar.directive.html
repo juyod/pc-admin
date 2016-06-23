@@ -1,1 +1,43 @@
-<div id='calendar' class="blurCalendar"></div>
+<div class="adCalendar">
+    <div class="adCalendar-header"></div>
+    <div class="horizontal-scroll" ng-show="status.showList">
+        <table class="table" st-table="adList">
+            <thead>
+                <tr class="sortable ">
+                    <th class="table-id">#编号</th>
+                    <th>星期</th>
+                    <th>时间段</th>
+                    <th>广告ID</th>
+                    <th>广告名称</th>
+                    <th>广告计价方式</th>
+                    <th>广告版位</th>
+                    <th>广告区块</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in adList">
+                    <td class="table-id">{{$index+1}}</td>
+                    <td>{{item.CAL_DATE}}</td>
+                    <td>{{item.CAL_TIME}}</td>
+                    <td>{{item.ADVERT_CODE}}</td>
+                    <td>{{item.ADVERT_NAME}}</td>
+                    <td>{{item.ADVERT_PUT_MODE}}</td>
+                    <td>{{item.PLAY_LEVEL}}</td>
+                    <td>{{item.ADVERT_NAME}}</td>
+                    <td>{{item.STATUS}}</td>
+                    <td><span class="fa fa-trash" ng-click="offSelft(item)"></span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="10" class="text-center">
+                        <div st-pagination="" st-items-by-page="20" st-displayed-pages="5"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div id="calendar" class="blurCalendar" ng-show="!status.showList"></div>
+</div>

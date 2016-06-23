@@ -7,6 +7,7 @@
 
   angular.module('PCAdmin.pages', [
       'ui.router',
+      'smart-table',
       'PCAdmin.pages.dashboard',
       'PCAdmin.pages.memberInfo',
       'PCAdmin.pages.adManager',

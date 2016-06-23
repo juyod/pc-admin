@@ -4,7 +4,7 @@
 (function() {
   'use strict';
 
-  angular.module('PCAdmin.pages.adCalendar', [])
+  angular.module('PCAdmin.pages.adCalendar', ['smart-table'])
     .config(routeConfig);
 
   /** @ngInject */

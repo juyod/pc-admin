@@ -29,7 +29,13 @@
     gossip: '#FFB300',
     white: '#FFCA28'
   };
-
+  var adCalendarColors = {
+    over: '#e85656',
+    playing: '#FFC400',
+    toPlay: '#2dacd1',
+    toOff: '#90b900',
+    offed: '#666666'
+  };
   angular.module('PCAdmin.theme')
     .provider('baConfig', configProvider);
 
@@ -62,7 +68,7 @@
         successDark: colorHelper.shade(colorScheme.success, 15),
         warningDark: colorHelper.shade(colorScheme.warning, 15),
         dangerDark: colorHelper.shade(colorScheme.danger, 15),
-
+        adCalendarColors: adCalendarColors,
         dashboard: {
           blueStone: dashboardColors.blueStone,
           surfieGreen: dashboardColors.surfieGreen,
