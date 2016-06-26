@@ -14,6 +14,8 @@
         url: '/adCalendar',
         templateUrl: 'app/pages/adCalendar/adCalendar.html',
         title: '广告行事历',
+        controller: 'adCalendarCtrl',
+        controllerAs: 'vm',
         sidebarMeta: {
           icon: 'fa fa-calendar',
           order: 4

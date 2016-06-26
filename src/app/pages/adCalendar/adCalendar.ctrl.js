@@ -6,30 +6,30 @@
   'use strict';
   angular.module('PCAdmin.pages.adCalendar')
     .controller('adCalendarCtrl', adCalendarCtrl);
-
   /** @ngInject */
   function adCalendarCtrl($scope, adCalendarService, $filter) {
-    var now = new Date();
-    var element = null;
+    var vm = this;
+    var now = new Date(),
+      element = null;
     $scope.params = {
       startDate: new Date(now.getTime() - now.getDay() * 24 * 60 * 60 * 1000),
       endDate: new Date(now.getTime() + (6 - now.getDay()) * 24 * 60 * 60 * 1000),
       sceneCode: 'N01C01T01A04Y01'
     };
     $scope.status = {
-      showList: true,
+      showList: true
     };
-    $scope.adList = [];
+    vm.adList = [];
     var query = function() {
       var queryParams = angular.copy($scope.params);
       queryParams.startDate = $filter('date')(queryParams.startDate, 'yyyy-MM-dd');
       queryParams.endDate = $filter('date')(queryParams.endDate, 'yyyy-MM-dd');
       adCalendarService.getAdvertCalendar(queryParams).then(function(data) {
-        $scope.adList = angular.copy(data);
+        vm.adList = data;
         var events = adCalendarService.adToCalendarEvent(data);
         element = $('#calendar').fullCalendar({
           header: {
-            left: 'prev,next',
+            left: '',
             center: 'title',
             right: ' '
           },
@@ -50,4 +50,4 @@
     };
     $scope.$watch('params', query);
   }
-})();
+})();;

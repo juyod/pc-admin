@@ -78,6 +78,12 @@
         "fonts/fontawesome-webfont.woff2"
       ]
     },
+    "fullCalendar":{
+      "main":[
+        "dist/fullCalendar.js",
+        "lang/zh-cn.js"
+      ]
+    },
     "echarts": {
       "main": "dist/echarts.min.js"
     }
