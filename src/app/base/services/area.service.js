@@ -15,7 +15,7 @@
 
         var defer = $q.defer();
         if (!areaList) {
-          fetchUtil.jsonp('adbms/BaseAdvertInfo_getSceneByAdvertiser.do').then(function(data) {
+          fetchUtil.jsonp('adbms/BaseAdvertInfo_getSceneByAdvertiser.do', params).then(function(data) {
             areaList = data.resultList;
             defer.resolve(data.resultList);
           }, function() {

@@ -1,4 +1,5 @@
-<div ba-panel ba-panel-class="calendar-panel traffic-panel">
+<div ba-panel ba-panel-class="with-scroll">
+    <div include-with-scope="app/pages/adCalendar/adCalendar.header.html"></div>
     <div ng-show="status.showList" include-with-scope="app/pages/adCalendar/adCalendar.table.html"></div>
     <div ng-show="!status.showList" include-with-scope="app/pages/adCalendar/adCalendar.cal.html"></div>
 </div>
