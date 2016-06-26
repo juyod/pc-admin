@@ -5,9 +5,9 @@
 (function() {
   'use strict';
   angular.module('PCAdmin.pages.adCalendar')
-    .controller('adCalendarCtrl', adCalendarCtrl);
+    .controller('adCalendarCtrl', adCalendarCtrl).controller('offShelfModalCtrl', offShelfModalCtrl);
   /** @ngInject */
-  function adCalendarCtrl($scope, adCalendarService, $filter, adService, toastr) {
+  function adCalendarCtrl($scope, adCalendarService, $filter, adService, userService, toastr) {
     var now = new Date(),
       element = null,
       vm = this;
@@ -53,11 +53,12 @@
       });
     };
     vm.adOffShelf = function(ad) {
-      debugger;
       var postParams = {
-
-      }
-      adService.adOffShelf().then(function() {
+        advertCode: ad.ADVERT_CODE,
+        overDate: ad.CAL_DATE,
+        applyUserId: userService.getUser().id
+      };
+      adService.adOffShelf(postParams).then(function() {
         toastr.pop({
           type: 'success',
           body: '下架成功',
@@ -72,8 +73,12 @@
         });
 
       })
-
     }
     $scope.$watch('params', vm.query)
+  }
+
+  /** @ngInject */
+  function offShelfModalCtrl() {
+
   }
 })();

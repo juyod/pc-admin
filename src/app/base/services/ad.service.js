@@ -13,7 +13,7 @@
     return {
       adOffShelf: function(params) {
         var defer = $q.defer();
-        fetchUtil.jsonp('backstageJson/Advert_applyAdOffShelf.do').then(function(data) {
+        fetchUtil.jsonp('backstageJson/Advert_applyAdOffShelf.do', params).then(function(data) {
           areaList = data.resultList;
           defer.resolve();
         }, function() {
