@@ -1,0 +1,21 @@
+.adcalendar {
+  &-header {
+    height: 50px;
+    .btn-group-left {
+      float: left;
+    }
+    .btn-group-toolbar {
+      float: left;
+      margin-left: 20px;
+    }
+    .btn-group-right {
+      .view-switch {
+        line-height: 34px;
+        font-size: 20px;
+        margin-right: 15px;
+        float: left;
+      }
+      float: right;
+    }
+  }
+}

@@ -3,10 +3,10 @@
   background: url($url) no-repeat center;
   background-size: contain;
   vertical-align: middle;
-  @if ($width != '') {
+  @if ($width !='') {
     width: $width + px;
   }
-  @if ($height != '') {
+  @if ($height !='') {
     height: $height + px;
   }
 }
@@ -21,8 +21,6 @@
 @include svg-icon-class('money', 80, 80);
 @include svg-icon-class('person', 80, 80);
 @include svg-icon-class('refresh', 80, 80);
-
-
 @mixin png-icon($url, $width, $height) {
   display: inline-block;
   width: $width + px;
@@ -34,6 +32,13 @@
 @mixin png-icon-class($iconName, $width, $height) {
   .#{'i-' + $iconName} {
     @include png-icon($images-root + $iconName + '.png', $width, $height);
+  }
+}
+
+.clickable {
+  cursor: pointer;
+  &:hover {
+    color: $primary;
   }
 }
 
