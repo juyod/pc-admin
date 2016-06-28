@@ -3,21 +3,19 @@
         <table class="table" st-table="vm.displayed" st-safe-src="vm.adList" >
             <thead>
                 <tr class="sortable">
-                    <th class="table-id">#编号</th>
-                    <th>星期</th>
-                    <th>时间段</th>
-                    <th>广告ID</th>
-                    <th>广告名称</th>
-                    <th>广告计价方式</th>
-                    <th>广告版位</th>
-                    <th>广告区块</th>
-                    <th>状态</th>
+                    <th st-sort="CAL_DATE">星期</th>
+                    <th st-sort="CAL_TIME">时间段</th>
+                    <th st-sort="ADVERT_CODE">广告编码</th>
+                    <th st-sort="ADVERT_NAME">广告名称</th>
+                    <th st-sort="ADVERT_PUT_MODE">广告计价方式</th>
+                    <th st-sort="PLAY_LEVEL">广告版位</th>
+                    <th st-sort="ADVERT_NAME">广告区块</th>
+                    <th st-sort="STATUS">状态</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="item in vm.displayed">
-                    <td class="table-id">{{$index+1}}</td>
                     <td>{{item.CAL_DATE}}</td>
                     <td>{{item.CAL_TIME}}</td>
                     <td>{{item.ADVERT_CODE}}</td>
@@ -26,7 +24,7 @@
                     <td>{{item.PLAY_LEVEL}}</td>
                     <td>{{item.ADVERT_NAME}}</td>
                     <td>{{item.STATUS}}</td>
-                    <td><span class="fa fa-trash clickable" ng-click="vm.adOffShelf(item)"></span></td>
+                    <td><span class="fa fa-trash clickable" ng-click="vm.showOffsetModal(item)"></span></td>
                 </tr>
             </tbody>
             <tfoot>
@@ -37,5 +35,6 @@
                 </tr>
             </tfoot>
         </table>
+        <no-data ng-if="!vm.displayed||vm.displayed.length<=0"></no-data>
     </div>
 </div>

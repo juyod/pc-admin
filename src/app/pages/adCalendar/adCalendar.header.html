@@ -1,19 +1,19 @@
 <div class="adcalendar-header">
     <div class="btn-group-left">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-default"><span class="fa fa-chevron-left clickable"></span></button>
-            <button type="button" class="btn btn-default"><span class="fa fa-chevron-right clickable"></span></button>
+            <button type="button" class="btn btn-default" ng-click="vm.prev()"><span class="fa fa-chevron-left clickable"></span></button>
+            <button type="button" class="btn btn-default" ng-click="vm.next()"><span class="fa fa-chevron-right clickable"></span></button>
         </div>
     </div>
     <div class="btn-group-toolbar">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-default">今天</button>
+            <button type="button" class="btn btn-default" ng-click="vm.goToday()">今天</button>
         </div>
     </div>
     <div class="btn-group-right">
-        <div class="view-switch"> <span class="fa fa-bars clickable"></span></div>
+        <div class="view-switch" ng-click="vm.switchView()"> <span class="fa fa-bars clickable"></span></div>
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-default">周</button>
+            <button type="button" class="btn btn-default" ng-disabled="true">周</button>
         </div>
     </div>
 </div>
