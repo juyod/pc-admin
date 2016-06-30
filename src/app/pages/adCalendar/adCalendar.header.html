@@ -6,14 +6,20 @@
         </div>
     </div>
     <div class="btn-group-toolbar">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-default" ng-click="vm.goToday()">今天</button>
+        <div class="form-group select-area">
+            <select class=" form-control " name="araeSelect " id="araeSelect " placeholder="请选择区域 " ng-model="params.sceneCode ">
+                <option value=" ">请选择区域</option>
+                <option ng-repeat="option in data.areaList " value="{{option.SCENE_CODE}} ">{{option.SCENE_NAME}}</option>
+            </select>
+        </div>
+        <div class="btn-group " role="group " aria-label="Basic example ">
+            <button type="button " class="btn btn-default " ng-click="vm.goToday() ">今天</button>
         </div>
     </div>
-    <div class="btn-group-right">
-        <div class="view-switch" ng-click="vm.switchView()"> <span class="fa fa-bars clickable"></span></div>
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-default" ng-disabled="true">周</button>
+    <div class="btn-group-right ">
+        <div class="view-switch " ng-click="vm.switchView() "> <span class="fa fa-bars clickable "></span></div>
+        <div class="btn-group " role="group " aria-label="Basic example ">
+            <button type="button " class="btn btn-default " ng-disabled="true ">周</button>
         </div>
     </div>
 </div>
