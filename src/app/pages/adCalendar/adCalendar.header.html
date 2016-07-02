@@ -7,9 +7,8 @@
     </div>
     <div class="btn-group-toolbar">
         <div class="form-group select-area">
-            <select class=" form-control " name="araeSelect " id="araeSelect " placeholder="请选择区域 " ng-model="params.sceneCode ">
-                <option value=" ">请选择区域</option>
-                <option ng-repeat="option in data.areaList " value="{{option.SCENE_CODE}} ">{{option.SCENE_NAME}}</option>
+            <select class=" form-control " name="araeSelect " id="araeSelect " placeholder="请选择区域 " ng-model="params.sceneCode" ng-change="vm.query()">
+                <option ng-repeat="option in status.areaList " value="{{option.SCENE_CODE}} ">{{option.SCENE_NAME}}</option>
             </select>
         </div>
         <div class="btn-group " role="group " aria-label="Basic example ">

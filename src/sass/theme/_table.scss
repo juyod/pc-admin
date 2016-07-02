@@ -2,6 +2,7 @@
   text-align: center;
   margin-bottom: 0;
   & > thead {
+    background-color: $table-head-bg;
     & > tr {
       & > th {
         border-bottom: 1px solid $border-light;
@@ -22,7 +23,7 @@
       }
       & > td {
         text-align: center;
-        padding: 0px 8px;
+        padding: 0 8px;
         line-height: 35px;
         border-top: 1px solid $border-light;
         &:first-child {
@@ -48,7 +49,9 @@
 
 .table-no-borders {
   border: none;
-  td, th, tr {
+  td,
+  th,
+  tr {
     text-align: center;
     border: none !important;
   }
@@ -113,11 +116,13 @@ tr.editable-row {
   width: 41px;
 }
 
-.st-sort-ascent, .st-sort-descent {
+.st-sort-ascent,
+.st-sort-descent {
   position: relative;
 }
 
-.st-sort-ascent:after, .st-sort-descent:after {
+.st-sort-ascent::after,
+.st-sort-descent::after {
   width: 0;
   height: 0;
   border-bottom: 4px solid $default-text;
@@ -127,7 +132,7 @@ tr.editable-row {
   margin-bottom: 2px;
 }
 
-.st-sort-descent:after {
+.st-sort-descent::after {
   transform: rotate(-180deg);
   margin-bottom: -2px;
 }
@@ -135,7 +140,7 @@ tr.editable-row {
 .sortable {
   th {
     cursor: pointer;
-    &:after {
+    &::after {
       content: '';
       display: inline-block;
       width: 8px;
@@ -167,18 +172,21 @@ input.search-input {
   max-height: 214px;
 }
 
-.pagination > li > a, .pagination > li > span {
+.pagination > li > a,
+.pagination > li > span {
   background: transparent;
 }
 
-.pagination > li:first-child > a, .pagination > li:first-child > span {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.pagination > li:last-child > a, .pagination > li:last-child > span {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .status-button {
@@ -186,7 +194,8 @@ input.search-input {
 }
 
 .table {
-  .editable-wrap .editable-controls, .editable-wrap .editable-error {
+  .editable-wrap .editable-controls,
+  .editable-wrap .editable-error {
     vertical-align: sub;
     .btn {
       &.dropdown-toggle {
@@ -240,7 +249,7 @@ input.search-input {
 .table-bordered > tfoot > tr > th,
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td{
+.table-bordered > tfoot > tr > td {
   border: 1px solid $border-light;
 }
 
@@ -259,6 +268,7 @@ input.search-input {
     }
   }
 }
+
 .table > tbody > tr.primary > td {
   @include color-row($primary);
 }
@@ -279,21 +289,24 @@ input.search-input {
   @include color-row($primary-light-forth);
 }
 
-
 .table > tbody > tr.success > td {
   @include color-row($success);
 }
+
 .table > tbody > tr.warning > td {
   @include color-row($warning);
 }
+
 .table > tbody > tr.danger > td {
   @include color-row($danger);
 }
+
 .table > tbody > tr.info > td {
   @include color-row($info);
 }
 
-.editable-click, a.editable-click {
+.editable-click,
+a.editable-click {
   color: $default-text;
   border-bottom: dashed 1px $border;
 }
@@ -313,21 +326,21 @@ th {
 .table-striped > tbody > tr > td {
   border: none;
 }
+
 .pagination > li > a,
-.pagination > li > span{
+.pagination > li > span {
   color: $default-text;
   border-color: $border;
 }
 
-
 .pagination > li:first-of-type > a,
-.pagination > li:first-of-type > span{
+.pagination > li:first-of-type > span {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 .pagination > li:last-of-type > a,
-.pagination > li:last-of-type > span{
+.pagination > li:last-of-type > span {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -345,13 +358,13 @@ th {
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
-.pagination > li > span:focus{
-  background-color: rgba(0,0,0,.2);
+.pagination > li > span:focus {
+  background-color: rgba(0, 0, 0, 0.2);
   color: $default-text;
 }
 
 .editable-buttons .btn-with-icon i {
-   margin-right: 0;
+  margin-right: 0;
 }
 
 .table-responsive {

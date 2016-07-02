@@ -29,8 +29,8 @@
       var events = [];
       angular.forEach(adList, function(v) {
         var tempDate = new Date(v.STATIS_TIME);
-        var endTime = new Date(tempDate.setHours(v.CAL_TIME.split(':')[0]));
-        var startTime = new Date(tempDate.setHours(v.CAL_TIME.split(':')[0] - 1));
+        var startTime = new Date(tempDate.setHours(v.CAL_TIME.split(':')[0]));
+        var endTime = new Date(tempDate.setHours(v.CAL_TIME.split(':')[0] + 1));
         events.push(angular.merge({
           title: v.ADVERT_NAME + '\n' + 'id:' + v.ADVERT_CODE + '\n' + v.STATUS,
           start: $.fullCalendar.moment(startTime),

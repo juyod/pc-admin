@@ -9,15 +9,17 @@
 
   /** @ngInject */
   function adService(fetchUtil, $q) {
-    var areaList = null;
     return {
       adOffShelf: function(params) {
         var defer = $q.defer();
         fetchUtil.jsonp('backstageJson/Advert_applyAdOffShelf.do', params).then(function(data) {
-          areaList = data.resultList;
-          defer.resolve();
-        }, function() {
-          defer.reject();
+          if (data.retState === 0) {
+            defer.resolve();
+          } else {
+            defer.reject(data.retMessage);
+          }
+        }, function(data) {
+          defer.reject(data);
         });
         return defer.promise;
       }

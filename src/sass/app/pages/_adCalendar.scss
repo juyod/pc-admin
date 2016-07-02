@@ -22,4 +22,27 @@
       float: right;
     }
   }
+  &-tooltip {
+    position: absolute;
+    width: 200px;
+    z-index: 1000;
+    .modal-title {
+      text-align: center;
+    }
+    .modal-body {
+      p {
+        font-size: 12px;
+      }
+    }
+    .modal-footer {
+      padding: 10px;
+    }
+    .btn {
+      font-size: 10px;
+    }
+  }
+}
+
+.fc-time-grid .fc-slats .fc-minor td {
+  border-top-style: none;
 }
