@@ -1,0 +1,79 @@
+<div ba-panel ba-panel-class="with-scroll">
+    <form class="row form-inline">
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label">区域:</label>
+        </div>
+        <div class="form-group  col-md-2 col-sm-3 col-xs-4">
+            <select class="form-control" name="araeSelect"  placeholder="请选择区域" ng-model="params.sceneCode">
+                <option value="">请选择区域</option>
+                <option ng-repeat="option in areaList" value="{{option.SCENE_CODE}}">{{option.SCENE_NAME}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label"> 查询时间:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.startDate" is-open="queryDateOpen" ng-required="true" close-text="Close" ng-disabled="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="queryDateOpen=!queryDateOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group  col-md-2 col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.endDate" is-open="endDateOpen" ng-required="true" close-text="Close" ng-disabled="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="endDateOpen=!endDateOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label"> 计价方式:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+          <select class="form-control" placeholder="请选择计价方式" ng-model="params.putMode">
+              <option value="">请选择计价方式</option>
+              <option value="01">CPM</option>
+              <option value="02">千次</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="vm.query()"><span class="fa fa-search"></span></button>
+    </form>
+    <div class="adCalendar">
+        <table class="table" st-table="vm.displayed" st-safe-src="vm.incomeList">
+            <thead>
+                <tr class="sortable">
+                    <th st-sort="SCENE_NAME">广告区域</th>
+                    <th st-sort="ADVERT_NAME">广告名称</th>
+                    <th st-sort="ON_SHELF_DATE">上架时间</th>
+                    <th st-sort="ADVERT_PUT_MODE">广告计价方式</th>
+                    <th st-sort="CNT_AD_PLAY">浏览累计人数</th>
+                    <th st-sort="ADVERT_PRICE">金额</th>
+                    <th st-sort="PLAY_LEVEL">广告版位</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.displayed">
+                    <td>{{item.SCENE_NAME}}</td>
+                    <td>{{item.ADVERT_NAME}}</td>
+                    <td>{{item.ON_SHELF_DATE}}</td>
+                    <td>{{item.ADVERT_PUT_MODE}}</td>
+                    <td>{{item.CNT_AD_PLAY}}</td>
+                    <td>{{item.ADVERT_PRICE}}</td>
+                    <td>{{item.PLAY_LEVEL}}</td>
+                    <td><span class="fa fa-search clickable" ng-click="vm.showDetail(item)"></span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8" class="text-center">
+                        <div st-pagination="" st-items-by-page="20" st-displayed-pages="5"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <no-data ng-if="!vm.displayed||vm.displayed.length<=0"></no-data>
+    </div>
+</div>

@@ -2,7 +2,7 @@
  * @author v.lugovsky
  * created on 16.12.2015
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.pages', [
@@ -15,7 +15,8 @@
       'PCAdmin.pages.systemNotice',
       'PCAdmin.pages.feedback',
       'PCAdmin.pages.advertiserManager',
-      'PCAdmin.pages.detailReport'
+      'PCAdmin.pages.detailReport',
+      'PCAdmin.pages.incomeReport'
     ])
     .config(routeConfig);
 

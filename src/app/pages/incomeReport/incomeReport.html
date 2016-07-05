@@ -1,0 +1,55 @@
+<div ba-panel ba-panel-class="with-scroll">
+    <form class="row form-inline">
+        <div class="form-group col-md-offset-2 col-sm-2 col-xs-4">
+            <label class="query-label"> 查询时间:</label>
+        </div>
+        <div class="form-group col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.startDate" is-open="queryDateOpen" ng-required="true" close-text="Close" ng-disabled="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="queryDateOpen=!queryDateOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.endDate" is-open="startDateOpen" ng-required="true" close-text="Close" ng-disabled="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="startDateOpen=!startDateOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="vm.query()"><span class="fa fa-search"></span></button>
+    </form>
+    <div class="adCalendar">
+        <table class="table" st-table="vm.displayed" st-safe-src="vm.incomeList">
+            <thead>
+                <tr class="sortable">
+                    <th st-sort="USER_NAME">企业主名称</th>
+                    <th st-sort="OCCUR_MONTH">收益月份</th>
+                    <th st-sort="OCCUR_AMT">己付金额</th>
+                    <th st-sort="BENEFIT">分成比例</th>
+                    <th st-sort="BENEFIT_PERCENT">红利</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.displayed">
+                    <td>{{item.USER_NAME}}</td>
+                    <td>{{item.OCCUR_MONTH}}</td>
+                    <td>{{item.OCCUR_AMT}}</td>
+                    <td>{{item.BENEFIT}}</td>
+                    <td>{{item.BENEFIT_PERCENT}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <div st-pagination="" st-items-by-page="20" st-displayed-pages="5"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <no-data ng-if="!vm.displayed||vm.displayed.length<=0"></no-data>
+    </div>
+</div>
