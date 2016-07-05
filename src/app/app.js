@@ -2,6 +2,7 @@
   'use strict';
   angular.module('PCAdmin', [
     'ngAnimate',
+    'ngCookies',
     'ui.bootstrap',
     'ui.sortable',
     'ui.router',
