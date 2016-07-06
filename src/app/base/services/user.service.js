@@ -8,7 +8,8 @@
     .factory('userService', userService);
 
   /** @ngInject */
-  function userService($cookies, toastr) {
+  function userService($cookies) {
+    var userTemp = $cookies.get('userInfo')
     var userInfo = {
       id: '8',
       name: 'Johon Smisth',

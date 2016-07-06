@@ -10,7 +10,7 @@
     $scope.login = function () {
       authService.login($scope.params).then(function (data) {
         $cookies.put('userInfo', JSON.stringify(data));
-        debugger;
+        window.location.href = "index.html";
       }, function (data) {
         toastr.error(data);
       });
