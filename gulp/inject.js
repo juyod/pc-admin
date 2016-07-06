@@ -31,6 +31,7 @@ gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendor
       path.join(conf.paths.src, '/app/**/*.js'),
       path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
       path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
+      path.join('!' + conf.paths.src, '/app/auth/*.js'),
     ])
     /*.pipe($.angularFilesort())*/
     .on('error', conf.errorHandler('AngularFilesort'));
@@ -40,7 +41,7 @@ gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendor
     addRootSlash: false
   };
 
-  return gulp.src(path.join(conf.paths.src, '/*.html'))
+  return gulp.src(path.join(conf.paths.src, '/index.html'))
     .pipe($.inject(injectStyles, injectOptions))
     .pipe($.inject(injectScripts, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))
@@ -70,9 +71,21 @@ var injectAlone = function (options) {
     ignorePath: [conf.paths.src, path.join(conf.paths.tmp, '/serve')],
     addRootSlash: false
   };
-
+  var injectAuthScripts = gulp.src([
+      path.join(conf.paths.src, '/assets/js/**/*.js'),
+      path.join(conf.paths.src, '/app/base/*.module.js'),
+      path.join(conf.paths.src, '/app/base/*.constants.js'),
+      path.join(conf.paths.src, '/app/base/services/*.js'),
+      path.join(conf.paths.src, '/app/base/util/*.js'),
+      path.join(conf.paths.src, '/app/auth/*.module.js'),
+      path.join(conf.paths.src, '/app/auth/*.service.js'),
+      path.join(conf.paths.src, '/app/auth/*.ctrl.js'),
+    ])
+    /*.pipe($.angularFilesort())*/
+    .on('error', conf.errorHandler('AngularFilesort'));
   return gulp.src(options.paths)
     .pipe($.inject(injectStyles, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))
+    .pipe($.inject(injectAuthScripts, injectOptions))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
 };

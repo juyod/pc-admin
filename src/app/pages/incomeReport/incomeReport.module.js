@@ -1,7 +1,7 @@
 /**
  * @author lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.pages.incomeReport', [])
@@ -14,6 +14,7 @@
         url: '/incomeReport',
         templateUrl: 'app/pages/incomeReport/incomeReport.html',
         controller: 'incomeReportCtrl',
+        controllerAs: 'vm',
         title: '收益报表',
         sidebarMeta: {
           icon: 'fa fa-usd',

@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var SEVER_ROOT = 'http://117.30.43.225:8088/portMgt/';
+  var SEVER_ROOT = 'http://27.152.134.157:8088/portMgt/';
 
   angular.module('PCAdmin.base')
     .constant('apiConfig', {

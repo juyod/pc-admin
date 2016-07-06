@@ -1,7 +1,7 @@
 /**
  * @author lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.base')
@@ -11,14 +11,14 @@
   function fetchUtil($http, apiConfig, $httpParamSerializer, $q, userService) {
     var user = userService.getUser();
     var type = user.type;
-    var jsonp = function(url, params) {
+    var jsonp = function (url, params, noNeedLogin) {
       params = params || {};
       var defer = $q.defer();
       params[type] = user.id;
       var qs = $httpParamSerializer(params);
-      $http.jsonp(apiConfig.url + url + '?callback=JSON_CALLBACK&' + qs).then(function(resp) {
+      $http.jsonp(apiConfig.url + url + '?callback=JSON_CALLBACK&' + qs).then(function (resp) {
         defer.resolve(resp.data);
-      }, function(data) {
+      }, function (data) {
         defer.reject(data);
       });
       return defer.promise;

@@ -1,14 +1,14 @@
 /**
  * @author lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.base')
     .factory('userService', userService);
 
   /** @ngInject */
-  function userService() {
+  function userService($cookies, toastr) {
     var userInfo = {
       id: '8',
       name: 'Johon Smisth',
@@ -17,13 +17,13 @@
       type: 'advertiserId' //busiOwnerId   advertiserId
     }
     return {
-      loadUser: function() {
+      loadUser: function () {
 
       },
-      getUser: function() {
+      getUser: function () {
         return userInfo;
       },
-      setUser: function(user) {
+      setUser: function (user) {
         userInfo = angular.merge(userInfo, user);
       }
     }

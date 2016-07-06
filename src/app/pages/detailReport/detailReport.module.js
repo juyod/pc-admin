@@ -1,7 +1,7 @@
 /**
  * @author lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.pages.detailReport', [])
@@ -14,6 +14,7 @@
         url: '/detailReport',
         templateUrl: 'app/pages/detailReport/detailReport.html',
         controller: 'detailReportCtrl',
+        controllerAs: 'vm',
         title: '明细报表',
         sidebarMeta: {
           icon: 'fa fa-newspaper-o',
