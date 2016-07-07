@@ -8,15 +8,13 @@
     .factory('userService', userService);
 
   /** @ngInject */
-  function userService($cookies) {
-    var userTemp = $cookies.get('userInfo')
-    var userInfo = {
-      id: '8',
-      name: 'Johon Smisth',
-      email: 'js@gmail.com',
-      photo: 'assets/img/app/profile/Nasta.png',
-      type: 'advertiserId' //busiOwnerId   advertiserId
-    }
+  function userService($cookies, $rootScope) {
+    var userTemp = $cookies.get('userInfo') || '{}';
+    var userInfo = JSON.parse(userTemp);
+    userInfo.id = 8;
+    userInfo.type = 'advertiserId';
+    $rootScope.userInfo = userInfo;
+
     return {
       loadUser: function () {
 
@@ -27,6 +25,6 @@
       setUser: function (user) {
         userInfo = angular.merge(userInfo, user);
       }
-    }
+    };
   }
 })();

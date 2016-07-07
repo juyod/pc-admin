@@ -6,12 +6,18 @@
   'use strict';
 
   angular.module('PCAdmin.theme.components')
-      .directive('pageTop', pageTop);
+    .directive('pageTop', pageTop);
 
+  function pageTopCtrl($scope) {
+    $scope.logout = function () {
+      window.location.href = 'auth.html';
+    };
+  }
   /** @ngInject */
   function pageTop() {
     return {
       restrict: 'E',
+      link: pageTopCtrl,
       templateUrl: 'app/theme/components/pageTop/pageTop.html'
     };
   }

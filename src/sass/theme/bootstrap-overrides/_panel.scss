@@ -1,6 +1,5 @@
 $panel-title-height: 44px;
 $panel-heading-font-size: 16px;
-
 .panel {
   @include scrollbars(0.4em, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.7));
   color: $default-text;
@@ -34,11 +33,11 @@ $panel-heading-font-size: 16px;
   &.calendar-panel {
     height: 830px;
   }
-
   &.with-scroll {
     .panel-body {
       height: calc(100% - #{$panel-title-height});
       overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 }
@@ -54,6 +53,9 @@ $panel-heading-font-size: 16px;
   > .panel-body {
     padding: 10px;
     height: 100%;
+    .report {
+      min-height: 600px;
+    }
   }
   > .panel-heading {
     color: $default-text;
@@ -175,6 +177,7 @@ $panel-heading-font-size: 16px;
 .light-text {
   font-weight: $font-light;
 }
+
 
 /*
 .panel-group .panel {

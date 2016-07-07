@@ -95,14 +95,17 @@
     vm.goToday = function () {
       $scope.params.startDate = new Date(now.getTime() - now.getDay() * 24 * 60 * 60 * 1000);
       $scope.params.endDate = new Date(now.getTime() + (6 - now.getDay()) * 24 * 60 * 60 * 1000);
+      vm.query();
     };
     vm.prev = function () {
       $scope.params.startDate = new Date($scope.params.startDate.getTime() - 7 * 24 * 60 * 60 * 1000);
       $scope.params.endDate = new Date($scope.params.endDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+      vm.query();
     };
     vm.next = function () {
       $scope.params.startDate = new Date($scope.params.startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
       $scope.params.endDate = new Date($scope.params.endDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+      vm.query();
     };
 
     var adOffShelf = function (ad) {

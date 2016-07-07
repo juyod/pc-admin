@@ -1,14 +1,14 @@
 /**
  * @author lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.pages.dashboard')
     .controller('everyDayVisitorCtrl', everyDayVisitorCtrl);
 
   /** @ngInject */
-  function everyDayVisitorCtrl($scope, everyDayVisitorSevice, areaService, $filter, baUtil, baConfig, layoutPaths) {
+  function everyDayVisitorCtrl($scope, everyDayVisitorSevice, areaService, $filter, baUtil, baConfig, adService) {
     $scope.params = {
       area: '',
       advertCode: '',
@@ -20,7 +20,7 @@
     };
     var layoutColors = baConfig.colors;
     var graphColor = baConfig.theme.blur ? '#000000' : layoutColors.primary;
-    var makeChart = function(chartData) {
+    var makeChart = function (chartData) {
       var myChart = echarts.init(document.getElementById('everDayChart'));
       var option = {
         title: {
@@ -28,7 +28,7 @@
         },
         tooltip: {
           trigger: 'axis',
-          formatter: function(params) {
+          formatter: function (params) {
             var data = params[0].data;
             return $filter('date')(data[0], 'HH:mm') + ' 造访量:' + data[1];
 
@@ -75,17 +75,21 @@
       myChart.setOption(option);
     };
 
-    areaService.loadAreaList().then(function(data) {
-      $scope.data.areaList = data;
-    });
-    $scope.query = function() {
+
+    $scope.query = function () {
       var queryParams = angular.copy($scope.params);
       queryParams.queryDate = $filter('date')(queryParams.queryDate, 'yyyyMMdd');
-      everyDayVisitorSevice.loadAdVisitCntGrowthRate(queryParams).then(function(data) {
+      everyDayVisitorSevice.loadAdVisitCntGrowthRate(queryParams).then(function (data) {
         makeChart(data);
       });
     };
-    $scope.query();
+    areaService.loadAreaList().then(function (data) {
+      $scope.data.areaList = data;
+    });
+    adService.getAdList().then(function (data) {
+      $scope.data.adList = data;
+      $scope.query();
+    });
 
   }
 })();

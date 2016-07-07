@@ -7,7 +7,6 @@
   width: 100%;
   min-width: $resMin;
   padding: 0 32px 0 40px;
-
   &.scrolled {
     background-color: rgba(black, 0.85);
   }
@@ -22,7 +21,6 @@ a.al-logo {
   float: left;
   outline: none !important;
   line-height: 60px;
-
   span {
     color: $primary;
   }
@@ -39,7 +37,6 @@ a.al-logo {
   margin-right: 12px;
   transition: all 0.15s ease-in-out;
   padding: 0;
-  width: 36px;
   height: 36px;
   border: 0;
   opacity: 1;
@@ -48,10 +45,29 @@ a.al-logo {
     display: block;
   }
   img {
+    float: left;
     width: 45px;
     height: 45px;
+    margin-right: 10px;
     border-radius: 50%;
   }
+  .user-name {
+    line-height: 35px
+  }
+}
+
+.al-user-logout {
+  float: right;
+  font-size: 22px;
+  line-height: 35px;
+  margin-left: 12px;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  padding: 0;
+  height: 36px;
+  border: 0;
+  opacity: 1;
+  position: relative;
 }
 
 a.refresh-data {
@@ -62,7 +78,6 @@ a.refresh-data {
   float: right;
   margin-top: 13px;
   margin-right: 26px;
-
   &:hover {
     color: $warning !important;
   }
@@ -78,7 +93,6 @@ a.collapse-menu-link {
   padding: 0;
   float: left;
   margin: 11px 0 0 25px;
-
   &:hover {
     text-decoration: none;
     color: $warning;
@@ -89,7 +103,6 @@ a.collapse-menu-link {
   float: right;
   margin-top: 14px;
   margin-right: 26px;
-
   .tpl-skin-panel {
     max-height: 300px;
     overflow-y: scroll;
@@ -116,7 +129,6 @@ a.collapse-menu-link {
   width: 162px;
   float: left;
   margin: 20px 0 0 30px;
-
   label {
     cursor: pointer;
   }
@@ -152,7 +164,7 @@ a.collapse-menu-link {
 }
 
 @media (max-width: $resXXS) {
-  .user-profile{
+  .user-profile {
     min-width: 136px;
   }
   a.refresh-data {
@@ -161,12 +173,11 @@ a.collapse-menu-link {
   a.collapse-menu-link {
     margin-left: 10px;
   }
-
   .al-skin-dropdown {
     display: none;
   }
 }
 
-.profile-toggle-link{
+.profile-toggle-link {
   cursor: pointer;
 }
