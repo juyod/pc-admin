@@ -12,9 +12,9 @@
     return {
       adOffShelf: function (params) {
         var defer = $q.defer();
-        fetchUtil.jsonp('backstageJson/Advert_applyAdOffShelf.do', params).then(function (data) {
-          if (data.retState === 0) {
-            defer.resolve();
+        fetchUtil.jsonp('adbms/BaseAdvertInfo_applyAdOffShelf.do', params).then(function (data) {
+          if (data.retState == 0) {
+            defer.resolve(data.retMessage);
           } else {
             defer.reject(data.retMessage);
           }

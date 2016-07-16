@@ -8,23 +8,20 @@
     .factory('userService', userService);
 
   /** @ngInject */
-  function userService($cookies, $rootScope) {
-    var userTemp = $cookies.get('userInfo') || '{}';
-    var userInfo = JSON.parse(userTemp);
-    userInfo.id = 8;
-    userInfo.type = 'advertiserId';
-    $rootScope.userInfo = userInfo;
-
+  function userService($cookies, $q) {
+    var userTemp = JSON.parse($cookies.get('userInfo') || '{}');
+    var userInfo = angular.copy(userTemp);
     return {
-      loadUser: function () {
-
-      },
       getUser: function () {
         return userInfo;
       },
       setUser: function (user) {
         userInfo = angular.merge(userInfo, user);
+      },
+      getbusiOwnerList: function () {
+
       }
+
     };
   }
 })();

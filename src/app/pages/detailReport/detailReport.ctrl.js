@@ -6,6 +6,7 @@
   'use strict';
 
   angular.module('PCAdmin.pages.detailReport')
+    .controller('showMoreDetailCtrl', showMoreDetailCtrl)
     .controller('detailReportCtrl', detailReportCtrl);
 
   /** @ngInject */
@@ -34,6 +35,32 @@
       }
     }, function () {});
     $scope.$watch('params', vm.query);
+    vm.showAdDetail = function (detailReport) {
+      var modal = $uibModal.open({
+        animation: true,
+        size: 'md',
+        controller: 'showMoreDetailCtrl',
+        templateUrl: 'app/pages/detailReport/detailReport.modal.html',
+        resolve: {
+          detailReport: function () {
+            return detailReport;
+          }
+        }
+      });
+      modal.result.finally(function () {});
+    };
+  }
+
+  /** @ngInject */
+  function showMoreDetailCtrl($scope, $uibModalInstance, datailReportService, detailReport, toastr) {
+    $scope.detailReport = detailReport;
+    datailReportService.queryDetail({
+      advertPutRecordId: detailReport.ADVERT_PUT_RECORD_ID
+    }).then(function (data) {
+      $scope.moreDetailReport = data;
+    }, function (data) {
+      toastr.error(data);
+    })
   }
 
 })();

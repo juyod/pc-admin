@@ -24,9 +24,28 @@
 
       }
     };
-
+    var hideNoEventTime = function () {
+      var timeEndElementEnd = $('#calendar').find('.fc-minor');
+      if (vm.events.length <= 0) {
+        $('.fc-body').hide();
+        return;
+      }
+      for (var i = 0; i < timeEndElementEnd.length; i++) {
+        var hasEvent = false;
+        for (var j = 0; j < vm.events.length; j++) {
+          if (parseInt(vm.events[j].startTime.format('HH')) === j) {
+            hasEvent = true;
+          }
+        }
+        if (!hasEvent) {
+          $(timeEndElementEnd[i]).hide();
+          $(timeEndElementEnd[i]).prev().hide();
+        }
+      }
+    };
     var makeCalendar = function (events) {
       events = events || [];
+      vm.events = events;
       $timeout(function () {
         if (element) {
           element.fullCalendar('destroy');
@@ -36,7 +55,7 @@
           lang: 'zh-cn',
           columnFormat: {
             month: 'ddd',
-            week: 'ddd MM/dd',
+            week: 'ddd (MM/dd)',
             day: 'dddd MM/dd'
           },
           firstDay: 0,
@@ -59,10 +78,11 @@
           events: events,
           eventMouseover: function (calEvent, jsEvent) {
             var oe = jsEvent.originalEvent;
-            $scope.tooltipStyle = {
-              'top': oe.clientY,
-              'left': oe.clientX
+            $scope.adToolTipShow = {
+              'top': (oe.clientY + 20) + 'px',
+              'left': (oe.clientX - 250) + 'px'
             };
+            console.log($scope.adToolTipShow);
             $scope.status.curAd = calEvent;
             vm.showAd();
             vm.cancelHideAd();
@@ -72,6 +92,9 @@
           }
         });
       });
+      setTimeout(function () {
+        hideNoEventTime();
+      }, 10);
     };
     vm.query = function () {
       var queryParams = angular.copy($scope.params);
@@ -111,11 +134,11 @@
     var adOffShelf = function (ad) {
       var postParams = {
         advertCode: ad.ADVERT_CODE,
-        overDate: ad.CAL_DATE,
+        overDate: ad.STATIS_TIME,
         applyUserId: userService.getUser().id
       };
-      adService.adOffShelf(postParams).then(function () {
-        toastr.success('下架成功');
+      adService.adOffShelf(postParams).then(function (message) {
+        toastr.success(message);
       }, function (message) {
         toastr.error(message);
       });
@@ -137,12 +160,12 @@
     };
     vm.showAd = function () {
       $timeout(function () {
-        $scope.status.showAdDetail = true;
-      }, 250)
+        $scope.adToolTipShow = true;
+      }, 250);
     };
     vm.hideAd = function () {
       $scope.status.timeoutPromise = $timeout(function () {
-        $scope.status.showAdDetail = false;
+        $scope.adToolTipShow = false;
       }, 250);
     };
     vm.cancelHideAd = function () {

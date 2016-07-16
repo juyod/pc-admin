@@ -1,44 +1,46 @@
 /**
  * @author lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.pages.dashboard')
     .factory('DashboardTopMsgService', DashboardTopMsgService);
 
   /** @ngInject */
-  function DashboardTopMsgService(fetchUtil, $q, noticeService) {
-    var getTotalOnline = function() {
+  function DashboardTopMsgService(fetchUtil, $q, noticeService, userService) {
+    var getTotalOnline = function () {
       var defer = $q.defer();
-      fetchUtil.jsonp('pubwifi/getTotalOnline.do', {}).then(function(data) {
+      fetchUtil.jsonp('pubwifi/getTotalOnline.do', {}).then(function (data) {
         if (data.resultList && data.resultList.length > 0) {
           defer.resolve(data.resultList[0].CNT_ONLINE);
         }
-      }, function() {
+      }, function () {
         defer.reject();
       });
       return defer.promise;
     };
 
-    var loadPeopleFlow = function() {
+    var loadPeopleFlow = function () {
       var defer = $q.defer();
-      fetchUtil.jsonp('pubwifi/getPassengerFlow.do', {}).then(function(data) {
+      fetchUtil.jsonp('pubwifi/getPassengerFlow.do', {}).then(function (data) {
         defer.resolve(data.PASSENGER_FLOW);
-      }, function() {
+      }, function () {
         defer.reject();
       });
       return defer.promise;
     };
-    var loadLatestAnnouncement = function() {
+    var loadLatestAnnouncement = function () {
       var defer = $q.defer();
-      noticeService.loadNoticeList().then(function(data) {
+      noticeService.loadNoticeList({
+        joinUserId: userService.getUser().userId
+      }).then(function (data) {
         if (data.resultList && data.resultList.length > 0) {
           defer.resolve(data.resultList[0].UN_VISIT_CNT);
         } else {
           defer.resolve(0);
         }
-      }, function(data) {
+      }, function (data) {
         defer.reject(data);
       })
       return defer.promise;

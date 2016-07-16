@@ -1,1 +1,5 @@
-<div id="calendar" class="blurCalendar"></div>
+<div>
+  <div  ng-show="adToolTipShow" include-with-scope="app/pages/adCalendar/adCalendar.tooltip.html"></div>
+  <div id="calendar" class="blurCalendar"></div>
+  <no-data ng-if="vm.events.length<=0"></no-data>
+</div>

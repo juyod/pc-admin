@@ -12,6 +12,7 @@
     background-color: $table-head-bg;
     & > tr {
       & > th {
+        text-align: center;
         border-bottom: 1px solid $border-light;
         white-space: nowrap;
         &:first-child {

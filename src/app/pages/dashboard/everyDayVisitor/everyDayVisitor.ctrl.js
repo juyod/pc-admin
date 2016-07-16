@@ -53,6 +53,7 @@
           }
         },
         yAxis: {
+          show: false,
           type: 'value',
           splitLine: {
             show: false
