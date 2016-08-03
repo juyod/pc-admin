@@ -31,7 +31,9 @@
         }
       });
       modal.result.finally(function () {
-        noticeService.viewNotice(notice);
+        noticeService.viewNotice(notice).then(function () {
+          notice.IS_VISIT = '01';
+        });
       });
     };
   }

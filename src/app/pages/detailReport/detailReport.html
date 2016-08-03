@@ -14,7 +14,7 @@
         </div>
         <div class="form-group col-md-2 col-sm-3 col-xs-4">
             <p class="input-group">
-                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.startDate" is-open="queryDateOpen" ng-required="true" close-text="Close"  ng-click="queryDateOpen=!queryDateOpen" ng-readonly="true" placeholder="请选择时间" />
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.startDate" is-open="queryDateOpen" ng-required="true" close-text="关闭"  ng-click="queryDateOpen=!queryDateOpen" ng-readonly="true" placeholder="请选择时间" />
                 <span class="input-group-btn">
                   <button type="button" class="btn btn-default" ng-click="queryDateOpen=!queryDateOpen"><i class="fa fa-calendar"></i></button>
                 </span>
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group  col-md-2 col-sm-3 col-xs-4">
             <p class="input-group">
-                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.endDate" is-open="endDateOpen" ng-required="true" close-text="Close" ng-click="endDateOpen=!endDateOpen" ng-readonly="true"  placeholder="请选择时间" />
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.endDate" is-open="endDateOpen" ng-required="true" close-text="关闭" ng-click="endDateOpen=!endDateOpen" ng-readonly="true"  placeholder="请选择时间" />
                 <span class="input-group-btn">
                   <button type="button" class="btn btn-default" ng-click="endDateOpen=!endDateOpen"><i class="fa fa-calendar"></i></button>
                 </span>
@@ -32,10 +32,8 @@
             <label class="query-label"> 计价方式:</label>
         </div>
         <div class="form-group col-md-2 col-sm-3 col-xs-4">
-          <select class="form-control" placeholder="请选择计价方式" ng-model="params.putMode">
+          <select class="form-control" placeholder="请选择计价方式" ng-model="params.putMode" dictionry-select="ADVERT_PUT_MODE">
               <option value="">请选择计价方式</option>
-              <option value="01">CPM</option>
-              <option value="02">千次</option>
           </select>
         </div>
         <button type="button" class="btn btn-primary" ng-click="vm.query()"><span class="fa fa-search"></span></button>
@@ -59,10 +57,10 @@
                     <td>{{item.SCENE_NAME}}</td>
                     <td>{{item.ADVERT_NAME}}</td>
                     <td>{{item.ON_SHELF_DATE}}</td>
-                    <td>{{item.ADVERT_PUT_MODE}}</td>
-                    <td>{{item.CNT_AD_PLAY}}</td>
+                    <td>{{item.ADVERT_PUT_MODE|dictionaryFilter:'ADVERT_PUT_MODE'}}</td>
+                    <td>{{item.CNT_AD_PLAY|number}}</td>
                     <td>{{item.POSITION_NAME}}</td>
-                    <td>{{item.ADVERT_PRICE}}</td>
+                    <td>{{item.ADVERT_PRICE|number}}</td>
                     <td><span class="fa fa-search clickable" ng-click="vm.showAdDetail(item)" uib-tooltip="查看详情"></span></td>
                 </tr>
             </tbody>

@@ -20,6 +20,7 @@
     $scope.status = {
       showList: false,
       areaList: [],
+      selectScence: '',
       curAd: {
 
       }

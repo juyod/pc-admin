@@ -9,7 +9,7 @@
                     <th st-sort="ADVERT_NAME">广告名称</th>
                     <th st-sort="ADVERT_PUT_MODE">广告计价方式</th>
                     <th st-sort="PLAY_LEVEL">广告版位</th>
-                    <th st-sort="ADVERT_NAME">广告区块</th>
+                    <th st-sort="ADVERT_NAME">投放区域</th>
                     <th st-sort="STATUS">状态</th>
                     <th>操作</th>
                 </tr>
@@ -22,7 +22,7 @@
                     <td>{{item.ADVERT_NAME}}</td>
                     <td>{{item.ADVERT_PUT_MODE}}</td>
                     <td>{{item.PLAY_LEVEL}}</td>
-                    <td>{{item.ADVERT_NAME}}</td>
+                    <td>{{status.selectScence}}</td>
                     <td>{{item.STATUS}}</td>
                     <td><span class="fa fa-trash clickable" ng-click="vm.showOffsetModal(item)"></span></td>
                 </tr>

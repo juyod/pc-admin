@@ -9,10 +9,10 @@
         <p>广告编号：{{detailReport.ADVERT_CODE}}</p>
         <p>广告上架地区：{{detailReport.SCENE_NAME}}</p>
         <p>广告上架时间：{{moreDetailReport.PLAY_TIME}}</p>
-        <p>广告计价方式：{{detailReport.ADVERT_PUT_MODE}}</p>
-        <p>广告轮播数：{{detailReport.AD_PLAY_CHANCE}}</p>
-        <p>浏览累计人数：{{detailReport.CNT_AD_PLAY}}</p>
-        <p>总金额：{{detailReport.ADVERT_PRICE}}</p>
+        <p>广告计价方式：{{detailReport.ADVERT_PUT_MODE|dictionaryFilter:'ADVERT_PUT_MODE'}}</p>
+        <p>广告轮播数：{{detailReport.AD_PLAY_CHANCE|number}}</p>
+        <p>浏览累计人数：{{detailReport.CNT_AD_PLAY|number}}</p>
+        <p>总金额：{{detailReport.ADVERT_PRICE|number}}</p>
         <p>性别比例：男性{{moreDetailReport.MALE_PERCENT}}，女性：{{moreDetailReport.FEMALE_PERCENT}}</p>
         <p>
             <span>年龄比例：</span>
