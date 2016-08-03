@@ -10,9 +10,9 @@
         if (data.retState !== '0') {
           defer.reject(data.retMessage);
         } else {
-          if (data.userInfo.userType === '03') {
+          if (data.roleType === '03') {
             data.userInfo.type = 'advertiserId';
-          } else if (data.userInfo.userType === '04') {
+          } else if (data.roleType === '04') {
             data.userInfo.type = 'busiOwnerId';
           }
           defer.resolve(data.userInfo);

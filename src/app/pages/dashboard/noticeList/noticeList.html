@@ -1,7 +1,7 @@
 <table class="table notice-list">
     <tr ng-repeat="row in noticeList" ng-class="[classList[$index%4]]" ng-click="showNoticeDetail(row)">
         <td><span class="fa fa-bell"></span></td>
-        <td>{{row.NOTICE_DESC}}</td>
+        <td><span class="clickable">{{row.NOTICE_DESC}}</span></td>
         <td>
           <span class="fa clickable" ng-class="{'fa-envelope':row.IS_VISIT==0,'fa-inbox':row.IS_VISIT!=0}"></span>
         </td>

@@ -20,11 +20,11 @@
             </p>
         </div>
         <div class="form-group col-md-1 col-sm-2 col-xs-4">
-            <label class="query-label">广告主:</label>
+            <label class="query-label">企业主:</label>
         </div>
         <div class="form-group  col-md-2 col-sm-3 col-xs-4">
             <select class="form-control" name="busiOwnerListSelect" placeholder="请选择广告主" ng-model="params.busiOwnerId">
-                <option value="">请选择广告主</option>
+                <option value="">请选择企业主</option>
                 <option ng-repeat="option in vm.busiOwnerList" value="{{option.USER_ID}}">{{option.USER_NAME}}</option>
             </select>
         </div>
@@ -37,8 +37,8 @@
                     <th st-sort="USER_NAME">企业主名称</th>
                     <th st-sort="OCCUR_MONTH">收益月份</th>
                     <th st-sort="OCCUR_AMT">己付金额</th>
-                    <th st-sort="BENEFIT">分成比例</th>
-                    <th st-sort="BENEFIT_PERCENT">红利</th>
+                    <th st-sort="BENEFIT_PERCENT">分成比例</th>
+                    <th st-sort="BENEFIT">红利</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,8 +46,8 @@
                     <td>{{item.USER_NAME}}</td>
                     <td>{{item.OCCUR_MONTH}}</td>
                     <td>{{item.OCCUR_AMT}}</td>
-                    <td>{{item.BENEFIT}}</td>
                     <td>{{item.BENEFIT_PERCENT}}</td>
+                    <td>{{item.BENEFIT}}</td>
                 </tr>
             </tbody>
             <tfoot>

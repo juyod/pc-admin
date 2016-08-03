@@ -11,12 +11,9 @@
                 <option ng-repeat="option in status.areaList " value="{{option.SCENE_CODE}} ">{{option.SCENE_NAME}}</option>
             </select>
         </div>
-        <div class="btn-group " role="group " aria-label="Basic example ">
-            <button type="button " class="btn btn-default " ng-click="vm.goToday() ">今天</button>
-        </div>
     </div>
     <div class="btn-group-right ">
-        <div class="view-switch " ng-click="vm.switchView() "> <span class="fa fa-bars clickable "></span></div>
+        <div class="view-switch " ng-click="vm.switchView() "> <span class="fa  clickable " ng-class="{'fa-bars':!status.showList,'fa-calendar':status.showList}" uib-tooltip="显示行事历/显示列表"></span></div>
         <div class="btn-group " role="group " aria-label="Basic example ">
             <button type="button " class="btn btn-default " ng-disabled="true ">周</button>
         </div>

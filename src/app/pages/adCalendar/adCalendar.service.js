@@ -33,7 +33,7 @@
         var startTime = new Date(tempDate.setHours(hours));
         var endTime = new Date(tempDate.setHours(hours + 1));
         events.push(angular.merge({
-          title: v.ADVERT_NAME + '\n' + 'id:' + v.ADVERT_CODE + '\n' + v.STATUS,
+          title: v.ADVERT_NAME + '\n' + '编号:' + v.ADVERT_CODE + '\n' + v.STATUS,
           start: $.fullCalendar.moment(startTime),
           end: $.fullCalendar.moment(endTime),
           allDay: v.IS_PUT_SUB_PERIODS === '0',

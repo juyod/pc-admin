@@ -50,6 +50,15 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
+                      <div class="input-group">
+                          <input type="text" class="form-control" ng-model="params.verifyCode" ng-keypress="enterPress($event)" placeholder="验证码">
+                          <span class="input-group-btn"><img ng-src="{{verifyImgUrl}}"/></span>
+                          <span class="input-group-addon"><span class="fa fa-refresh clickable" ng-click="refreshImg()"></span></span>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
                         <button type="button" class="btn  btn-primary form-control" ng-click="login()">登录</button>
                     </div>
                 </div>

@@ -50,7 +50,8 @@
           type: 'time',
           splitLine: {
             show: false
-          }
+          },
+          splitNumber: 12
         },
         yAxis: {
           show: false,
