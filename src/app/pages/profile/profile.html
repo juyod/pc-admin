@@ -1,0 +1,180 @@
+<div ba-panel ba-panel-class="profile-page">
+    <div class="panel-content">
+        <h3 class="with-line">用户信息</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label for="inputFirstName" class="col-md-2 col-sm-3 control-label">用户名称：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="text" class="form-control" id="userName" placeholder="" value="">
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputLastName" class="col-md-2 col-sm-3 control-label">姓名：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="text" class="form-control" id="inputLastName" placeholder="" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label class="col-md-2 col-sm-3 control-label">性别：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <div class="input-demo radio-demo row">
+                            <div class="col-md-4">
+                                <label class="radio-inline custom-radio nowrap">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                                    <span>男</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="radio-inline custom-radio nowrap">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                                    <span>女</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="radio-inline custom-radio nowrap">
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
+                                    <span>未知</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label for="inputOccupation" class="col-md-2 col-sm-3 control-label">生日：</label>
+
+                    <div class="col-md-4 col-sm-9">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" is-open="birthdayOpen" ng-click="birthdayOpen=!birthdayOpen" ng-model="profile.birthday" placeholder="">
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="birthdayOpen=!birthdayOpen"><i class="fa fa-calendar"></i></button>
+                        </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="with-line">联系信息：</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label for="inputEmail3" class="col-md-2 col-sm-3 control-label">手机：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputPhone" class="col-md-2 col-sm-3 control-label">邮箱：</label>
+
+                    <div class="col-md-4 col-sm-9">
+                        <input type="text" class="form-control" id="inputPhone" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label class="col-md-2 col-sm-3 control-label">地址：</label>
+
+                    <div class="col-md-2 col-sm-9">
+                        <select class="form-control" title="Standard Select" selectpicker>
+                            <option>San Francisco</option>
+                            <option>London</option>
+                            <option>Minsk</option>
+                            <option>Tokio</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 col-sm-9">
+                        <select class="form-control" title="Standard Select" selectpicker>
+                            <option>San Francisco</option>
+                            <option>London</option>
+                            <option>Minsk</option>
+                            <option>Tokio</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 col-sm-9">
+                        <select class="form-control" title="Standard Select" selectpicker>
+                            <option>San Francisco</option>
+                            <option>London</option>
+                            <option>Minsk</option>
+                            <option>Tokio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputRoom" class="col-md-2 col-sm-3 control-label"></label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="text" class="form-control" id="inputRoom" placeholder="" value="303">
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputRoom" class="col-md-2 col-sm-3 control-label">公司名称：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputRoom" class="col-md-2 col-sm-3 control-label">公司电话：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="with-line">修改密码</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label for="inputPassword" class="col-md-2 col-sm-3 control-label">旧密码：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="" value="12345678">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label for="inputPassword" class="col-md-2 col-sm-3 control-label">新密码：</label>
+
+                    <div class="col-md-4 col-sm-9">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="" value="12345678">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group row clearfix">
+                    <label for="inputConfirmPassword" class="col-md-2 col-sm-3 control-label">确认密码：</label>
+                    <div class="col-md-4 col-sm-9">
+                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="with-line">银行信息</h3>
+
+        <div class="social-profiles row clearfix">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputPassword" class="col-sm-3 control-label">银行名称：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputPassword" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputPassword" class="col-sm-3 control-label">卡号：</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputPassword" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-with-icon save-profile">
+            <i class="ion-android-checkmark-circle"></i> 保存
+        </button>
+    </div>
+</div>

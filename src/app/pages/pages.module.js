@@ -1,6 +1,5 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author lgc
  */
 (function () {
   'use strict';
@@ -11,7 +10,11 @@
       'PCAdmin.pages.detailReport',
       'PCAdmin.pages.adCalendar',
       'PCAdmin.pages.detailReport',
-      'PCAdmin.pages.incomeReport'
+      'PCAdmin.pages.incomeReport',
+      'PCAdmin.pages.profile',
+      'PCAdmin.pages.sysNotice',
+      'PCAdmin.pages.adMaterial',
+      'PCAdmin.pages.busiOwnerManager'
     ])
     .config(routeConfig);
 

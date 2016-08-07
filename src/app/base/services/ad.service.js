@@ -24,11 +24,8 @@
         return defer.promise;
       },
       getAdList: function (params) {
-        params = {
-          sceneCode: 'N01C01T01A02Y02',
-          advertiserId: 8
-        };
-
+        params = params || {};
+        params.advertStatus = '02';
         var defer = $q.defer();
         fetchUtil.jsonp('adbms/BaseAdvertInfo_getAdvertByAdvertiser.do', params).then(function (data) {
           defer.resolve(data.resultList);

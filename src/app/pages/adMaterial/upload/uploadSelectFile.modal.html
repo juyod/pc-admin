@@ -1,0 +1,28 @@
+<div class="modal-content upload-file-modal">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">新增文件</h4>
+    </div>
+    <div class="modal-body" style="max-height:300px; overflow-y:scroll;">
+        <div class="row" ng-repeat="file in files">
+            <div class="col-md-4">
+                <img class="img-responsive" ngf-thumbnail="file">
+            </div>
+            <div class="col-md-8">
+                <label class="control-label">广告名称</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="file.name">
+                    <span class="input-group-btn">
+                      <button type="button" ngf-select ng-model="file" name="file" class="btn btn-primary">选择文件</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="close()">确定</button>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div ba-panel ba-panel-class="profile-page">
+    <div class="panel-content">
+        <form>
+            <h3 class="with-line">上传广告素材</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group row clearfix">
+                        <label for="inputFirstName" class="col-md-2 col-sm-3 control-label">地区：</label>
+                        <div class="col-md-4 col-sm-9">
+                            <select class="form-control" placeholder="请选择地区" ng-model="uploadInfo.putMode" area-select>
+                                <option value="">请选择地区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row clearfix">
+                        <label for="inputLastName" class="col-md-2 col-sm-3 control-label">广告型态：</label>
+                        <div class="col-md-4 col-sm-9">
+                            <select class="form-control" placeholder="请选择广告型态" ng-model="uploadInfo.advertType" dictionry-select="ADVERT_TYPE">
+                                <option value="">请选择广告型态</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group row clearfix">
+                        <label class="col-md-2 col-sm-3 control-label">上传档案：</label>
+                        <div class="col-md-4 col-sm-6">
+                            <input type="text" class="form-control" ng-model="uploadInfo.files">
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="vm.openFileSelect()">浏览</button>
+                        </div>
+                    </div>
+                    <div class="form-group row clearfix">
+                        <label for="inputOccupation" class="col-md-2 col-sm-3 control-label">广告隶属于：</label>
+                        <div class="col-md-4 col-sm-9">
+                            <select class="form-control" placeholder="请选择广告型态" ng-model="uploadInfo.busiOwnerId" busi-owner-select>
+                                <option value="">请选择企业主</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-with-icon save-profile" ng-click="uploadAd()">
+                <i class="ion-android-checkmark-circle"></i> 保存
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div ba-panel ba-panel-class="with-scroll">
+    <form class="row form-inline">
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label"> 邮箱:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+          <input type="text" class="form-control" ng-model="params.email" placeholder="请输入邮箱" />
+        </div>
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label"> 手机号:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+          <input type="text" class="form-control" ng-model="params.phone" placeholder="请输入手机号" />
+        </div>
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label"> 企业主:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+          <select class="form-control" placeholder="请选择企业主" ng-model="params.userId" busi-owner-select>
+              <option value="">请选择企业主</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="vm.query()"><span class="fa fa-search"></span></button>
+    </form>
+    <div class="report">
+        <table class="table" st-table="vm.displayed" st-safe-src="vm.detailList">
+            <thead>
+                <tr class="sortable">
+                    <th st-sort="SCENE_NAME">企业主名称</th>
+                    <th st-sort="ADVERT_NAME">电子信箱</th>
+                    <th st-sort="ON_SHELF_DATE">电话号码</th>
+                    <th st-sort="CNT_AD_PLAY">建立时间</th>
+                    <th st-sort="POSITION_NAME">备注</th>
+                    <th st-sort="ADVERT_PRICE">功能</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.displayed">
+                    <td>{{item.SCENE_NAME}}</td>
+                    <td>{{item.ADVERT_NAME}}</td>
+                    <td>{{item.ADVERT_PUT_MODE|dictionaryFilter:'ADVERT_PUT_MODE'}}</td>
+                    <td>{{item.CNT_AD_PLAY|number}}</td>
+                    <td>{{item.POSITION_NAME}}</td>
+                    <td><span class="fa fa-search clickable" ng-click="vm.showAdDetail(item)" uib-tooltip="查看详情"></span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8" class="text-center">
+                        <div st-pagination="" st-items-by-page="20" st-displayed-pages="5"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <no-data ng-if="!vm.displayed||vm.displayed.length<=0"></no-data>
+    </div>
+</div>

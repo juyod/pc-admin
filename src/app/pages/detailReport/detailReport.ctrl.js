@@ -60,7 +60,7 @@
       $scope.moreDetailReport = data;
     }, function (data) {
       toastr.error(data);
-    })
+    });
   }
 
 })();

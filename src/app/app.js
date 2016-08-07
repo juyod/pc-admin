@@ -1,4 +1,8 @@
-(function() {
+/**
+ * @author lgc
+ * @file app.js
+ */
+(function () {
   'use strict';
   angular.module('PCAdmin', [
     'ngAnimate',

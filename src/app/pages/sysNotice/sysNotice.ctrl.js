@@ -1,26 +1,24 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author lgc
  */
 (function () {
   'use strict';
 
-  angular.module('PCAdmin.pages.dashboard')
-    .controller('noticeListCtrl', noticeListCtrl)
-    .controller('noticeDetailCtrl', noticeDetailCtrl);
+  angular.module('PCAdmin.pages.sysNotice')
+    .controller('sysNoticeCtrl', sysNoticeCtrl)
+    .controller('sysNoticeDetailCtrl', sysNoticeDetailCtrl);
 
   /** @ngInject */
-  function noticeListCtrl($scope, noticeService, $uibModal) {
-    $scope.noticeList = [];
+  function sysNoticeCtrl($scope, $filter, $uibModal, noticeService) {
+    var vm = this;
     noticeService.loadNoticeList().then(function (data) {
-      $scope.noticeList = data.resultList;
+      vm.noticeList = data.resultList;
     });
-
     $scope.showNoticeDetail = function (notice) {
       var modal = $uibModal.open({
         animation: true,
         size: 'lg',
-        controller: 'noticeDetailCtrl',
+        controller: 'sysNoticeDetailCtrl',
         templateUrl: 'app/pages/dashboard/noticeList/notice.modal.html',
         resolve: {
           notice: function () {
@@ -36,8 +34,7 @@
     };
   }
 
-  /** @ngInject */
-  function noticeDetailCtrl($scope, notice, $uibModalInstance) {
+  function sysNoticeDetailCtrl($scope, notice, $uibModalInstance) {
     $scope.ok = function () {
       $uibModalInstance.close();
     };

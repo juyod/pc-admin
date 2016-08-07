@@ -222,13 +222,13 @@ a.sn-link {
 .profile-page {
   .form-group {
     label {
+      text-align: right;
       line-height: 34px;
       font-size: 14px;
       font-weight: $font-light;
     }
-    input{
+    input {
       font-weight: $font-light;
     }
   }
 }
-

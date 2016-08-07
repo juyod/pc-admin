@@ -1,0 +1,83 @@
+<div ba-panel ba-panel-class="with-scroll">
+    <form class="row form-inline">
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label">区域:</label>
+        </div>
+        <div class="form-group  col-md-2 col-sm-3 col-xs-4">
+            <select class="form-control" name="araeSelect" area-select placeholder="请选择区域" ng-model="params.sceneCode">
+                <option value="">请选择区域</option>
+            </select>
+        </div>
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label"> 查询时间:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.startDate" is-open="queryDateOpen" ng-required="true" close-text="关闭" ng-click="queryDateOpen=!queryDateOpen" ng-readonly="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="queryDateOpen=!queryDateOpen"><i class="fa fa-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group  col-md-2 col-sm-3 col-xs-4">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="params.endDate" is-open="endDateOpen" ng-required="true" close-text="关闭" ng-click="endDateOpen=!endDateOpen" ng-readonly="true" placeholder="请选择时间" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="endDateOpen=!endDateOpen"><i class="fa fa-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label">查询广告:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+            <select class="form-control" placeholder="请选择广告" ad-select ng-model="params.advertCode">
+                <option value="">请选择广告</option>
+            </select>
+        </div>
+        <!-- <div class="form-group col-md-1 col-sm-2 col-xs-4">
+            <label class="query-label">查询公司:</label>
+        </div>
+        <div class="form-group col-md-2 col-sm-3 col-xs-4">
+            <select class="form-control" placeholder="请选择计价方式" ng-model="params.putMode" busi-owner-select>
+                <option value="">请选择公司:</option>
+            </select>
+        </div> -->
+        <button type="button" class="btn btn-primary" style="float: right;
+  margin-right: 15px;" ng-click="vm.query()"><span class="fa fa-search"></span></button>
+    </form>
+    <div class="audit-status">
+        <table class="table" st-table="vm.displayed" st-safe-src="vm.detailList">
+            <thead>
+                <tr class="sortable">
+                    <th st-sort="SCENE_NAME">地区</th>
+                    <th st-sort="ADVERT_NAME">广告名称</th>
+                    <th st-sort="ON_SHELF_DATE">上传日期</th>
+                    <th st-sort="ADVERT_PUT_MODE">广告编号</th>
+                    <th st-sort="CNT_AD_PLAY">状态</th>
+                    <th colspan="2">功能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.displayed">
+                    <td>{{item.SCENE_NAME}}</td>
+                    <td>{{item.ADVERT_NAME}}</td>
+                    <td>{{item.ON_SHELF_DATE}}</td>
+                    <td>{{item.ADVERT_PUT_MODE|dictionaryFilter:'ADVERT_PUT_MODE'}}</td>
+                    <td>{{item.CNT_AD_PLAY|number}}</td>
+                    <td>{{item.POSITION_NAME}}</td>
+                    <td>{{item.ADVERT_PRICE|number}}</td>
+                    <td><span class="fa fa-search clickable" ng-click="vm.showAdDetail(item)" uib-tooltip="查看详情"></span></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8" class="text-center">
+                        <div st-pagination="" st-items-by-page="20" st-displayed-pages="5"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <no-data ng-if="!vm.displayed||vm.displayed.length<=0"></no-data>
+    </div>
+</div>

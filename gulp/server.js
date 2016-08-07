@@ -15,7 +15,7 @@ function browserSyncInit(baseDir, browser) {
   browser = browser === undefined ? 'default' : browser;
 
   var routes = null;
-  if(baseDir === conf.paths.src || (util.isArray(baseDir) && baseDir.indexOf(conf.paths.src) !== -1)) {
+  if (baseDir === conf.paths.src || (util.isArray(baseDir) && baseDir.indexOf(conf.paths.src) !== -1)) {
     routes = {
       '/bower_components': 'bower_components'
     };
@@ -33,7 +33,8 @@ function browserSyncInit(baseDir, browser) {
    *
    * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.9.0/README.md
    */
-  // server.middleware = proxyMiddleware('/users', {target: 'http://jsonplaceholder.typicode.com', changeOrigin: true});
+  var proxyConfig = require('./config/proxy.js');
+  server.middleware = proxyMiddleware(proxyConfig.paths, proxyConfig.option);
 
   browserSync.instance = browserSync.init({
     startPath: '/',
@@ -44,7 +45,7 @@ function browserSyncInit(baseDir, browser) {
 }
 
 browserSync.use(browserSyncSpa({
-  selector: '[ng-app]'// Only needed for angular apps
+  selector: '[ng-app]' // Only needed for angular apps
 }));
 
 gulp.task('serve', ['watch'], function () {

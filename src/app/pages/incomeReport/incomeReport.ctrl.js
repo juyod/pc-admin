@@ -1,6 +1,5 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author lgc
  */
 (function () {
   'use strict';

@@ -1,0 +1,19 @@
+<div ba-panel ba-panel-class="with-scroll">
+    <table class="table" st-table="vm.displayed" st-safe-src="vm.noticeList" class="table notice-list">
+        <thead>
+            <tr class="sortable">
+                <th st-sort="ADVERT_PUT_MODE">状态</th>
+                <th st-sort="NOTICE_DESC">公告内容</th>
+                <th st-sort="POSITION_NAME">公告时间</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="row in vm.displayed" ng-click="showNoticeDetail(row)">
+            <td><span class="fa fa-bell"></span></td>
+            <td  style="text-align:left;"><span class="clickable" >{{row.NOTICE_DESC}}</span></td>
+            <td>
+              {{row.CREATE_TIME}}
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,3 +1,6 @@
+/**
+ * @author lgc
+ */
 (function () {
   'use strict';
   /** @ngInject */

@@ -48,7 +48,9 @@
     "textAngular": "~1.4.6",
     "angular-xeditable": "~0.1.9",
     "ng-js-tree": "~0.0.7",
-    "echarts": "https://github.com/ecomfe/echarts.git"
+    "echarts": "https://github.com/ecomfe/echarts.git",
+    "ng-file-upload-shim": "^12.0.4",
+    "ng-file-upload": "^12.0.4"
   },
   "overrides": {
     "bootstrap": {

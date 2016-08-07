@@ -14,7 +14,7 @@
       loadBusiOwnerList: function () {
         var defer = $q.defer();
         if (!busiOwnerList) {
-          fetchUtil.jsonp('adbms/BaseAdvertInfo_getBusiOwnerByAdvertiser.do', {
+          fetchUtil.jsonp('bguser/getUserList.do', {
             advertiserId: userService.getUser().userId
           }).then(function (data) {
             busiOwnerList = data.resultList;
