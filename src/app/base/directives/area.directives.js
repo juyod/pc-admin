@@ -6,7 +6,6 @@
 
   angular.module('PCAdmin.base')
     .directive('areaSelect', areaSelect);
-
   /** @ngInject */
   function areaSelect(areaService) {
     return {
@@ -19,5 +18,4 @@
       }
     };
   }
-
 })();

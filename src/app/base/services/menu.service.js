@@ -9,8 +9,24 @@
 
   /** @ngInject */
   function menuService(fetchUtil, $q, userService) {
-
-    var loadMenus = function () {
+    var changeRespToRuter = function (data) {
+      var resultList = [];
+      for (var i = 0; i < data.length; i++) {
+        var temp = {
+          url: '/busiOwnerManager',
+          title: '企业主管理',
+          templateUrl: 'app/pages/busiOwnerManager/busiOwnerManager.html',
+          controller: 'busiOwnerManagerCtrl',
+          sidebarMeta: {
+            icon: 'fa fa-cog',
+            order: 2
+          }
+        };
+        resultList.push(temp);
+      }
+      return resultList;
+    };
+    var loadNoticeList = function () {
       var params = {};
       params.systemCode = '03';
       params.userId = userService.getUser().userId;
