@@ -5,6 +5,6 @@
     </tr>
     <tr ng-repeat="row in vistorsList" ng-class="[classList[$index%4]]">
         <td>{{row.SCENE_NAME}}</td>
-        <td>{{row.VISIT_CNT}}</td>
+        <td>{{row.VISIT_CNT|number}}</td>
     </tr>
 </table>

@@ -1,7 +1,7 @@
 /**
- * @author guocailee
+ * @author  lgc
  */
-(function() {
+(function () {
   'use strict';
 
   angular.module('PCAdmin.pages.dashboard')

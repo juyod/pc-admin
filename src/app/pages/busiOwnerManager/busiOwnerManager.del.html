@@ -1,0 +1,15 @@
+<div class="modal-content adcalendar-modal">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$ok()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title"></h4>
+  </div>
+    <div class="modal-body">
+      <ng-bind-html ng-bind-html="notice.NOTICE_CONTENT">
+      </ng-bind-html>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" ng-click="ok()">确定</button>
+    </div>
+</div>
